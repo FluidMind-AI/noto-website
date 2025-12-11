@@ -12,11 +12,11 @@
     display: flex;
     align-items: center;
     gap: var(--space-xl);
-    background: linear-gradient(135deg, #FFE5B4, #FFD88F);
+    background: linear-gradient(135deg, var(--color-sky-100), var(--color-blue-100));
     padding: var(--space-xl) var(--space-2xl);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
-    border: 3px solid var(--brand-orange);
+    border: 3px solid var(--brand-cyan);
     animation: bubbleFloat 3s ease-in-out infinite;
 }
 
@@ -65,7 +65,7 @@
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 25px solid var(--brand-orange);
+    border-top: 25px solid var(--brand-cyan);
 }
 
 .bubble-tail::after {
@@ -77,7 +77,7 @@
     height: 0;
     border-left: 17px solid transparent;
     border-right: 17px solid transparent;
-    border-top: 22px solid #FFD88F;
+    border-top: 22px solid var(--color-blue-100);
 }
 
 /* Responsive */
