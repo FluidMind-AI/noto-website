@@ -192,7 +192,8 @@ body {
 }
 
 .hero-logo-big {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
+    margin-top: calc(var(--space-lg) * -1);
 }
 
 .hero-logo-big img {
