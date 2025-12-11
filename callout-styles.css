@@ -1,0 +1,102 @@
+/* ===== FUN CALLOUT BUBBLE ===== */
+.fun-callout {
+    padding: var(--space-xl) 0;
+    background: linear-gradient(180deg, var(--color-white), var(--color-sky-50));
+    overflow: visible;
+}
+
+.callout-bubble {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    background: linear-gradient(135deg, #FFE5B4, #FFD88F);
+    padding: var(--space-xl) var(--space-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    border: 3px solid var(--brand-orange);
+    animation: bubbleFloat 3s ease-in-out infinite;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.bubble-character {
+    flex-shrink: 0;
+}
+
+.bubble-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.bubble-content {
+    flex: 1;
+}
+
+.bubble-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--color-gray-800);
+}
+
+.bubble-text strong {
+    color: var(--brand-blue);
+    font-weight: 800;
+}
+
+.bubble-tail {
+    position: absolute;
+    bottom: -20px;
+    left: 100px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 25px solid var(--brand-orange);
+}
+
+.bubble-tail::after {
+    content: '';
+    position: absolute;
+    top: -28px;
+    left: -17px;
+    width: 0;
+    height: 0;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-top: 22px solid #FFD88F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .callout-bubble {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-lg);
+    }
+
+    .bubble-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .bubble-text {
+        font-size: 1rem;
+    }
+
+    .bubble-tail {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
