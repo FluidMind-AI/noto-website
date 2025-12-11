@@ -7,7 +7,7 @@ function typeWriter() {
     if (charIndex < typewriterText.length) {
         typewriterElement.textContent += typewriterText.charAt(charIndex);
         charIndex++;
-        setTimeout(typeWriter, 60); // Adjust speed here (lower = faster)
+        setTimeout(typeWriter, 40); // Adjust speed here (lower = faster)
     }
 }
 
