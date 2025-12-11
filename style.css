@@ -192,12 +192,12 @@ body {
 }
 
 .hero-logo-big {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
 .hero-logo-big img {
-    width: 120px;
-    height: 120px;
+    width: 280px;
+    height: 280px;
     object-fit: contain;
     animation: bounce 2s ease-in-out infinite;
 }
