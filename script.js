@@ -163,6 +163,37 @@ if (heroLogo) {
     });
 }
 
+// ===== ROTATING BUBBLE MESSAGES =====
+const bubbleMessages = [
+    '<strong>No annoying meeting prompts.</strong> I work silently in the background while you focus on what matters.',
+    '<strong>I summarize everything.</strong> Turn long meetings into clear, structured notes you can actually use.',
+    '<strong>Ask me anything.</strong> Get answers about the meeting, create follow-up emails, draft action items—whatever you need.'
+];
+
+let currentMessageIndex = 0;
+const bubbleElement = document.getElementById('bubble-message');
+
+function rotateBubbleMessage() {
+    if (!bubbleElement) return;
+
+    // Fade out
+    bubbleElement.style.opacity = '0';
+
+    setTimeout(() => {
+        // Change message
+        currentMessageIndex = (currentMessageIndex + 1) % bubbleMessages.length;
+        bubbleElement.innerHTML = bubbleMessages[currentMessageIndex];
+
+        // Fade in
+        bubbleElement.style.opacity = '1';
+    }, 500);
+}
+
+// Rotate messages every 5 seconds
+if (bubbleElement) {
+    setInterval(rotateBubbleMessage, 5000);
+}
+
 // ===== CONSOLE MESSAGE =====
 console.log('%cNotoNote 💙', 'font-size: 32px; font-weight: bold; color: #1E88E5; font-family: Poppins, sans-serif;');
 console.log('%cYour clarity companion', 'font-size: 14px; color: #64748B;');
