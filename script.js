@@ -1,3 +1,21 @@
+// ===== TYPEWRITER EFFECT =====
+const typewriterText = "Turn conversations into clarity";
+const typewriterElement = document.getElementById('typewriter');
+let charIndex = 0;
+
+function typeWriter() {
+    if (charIndex < typewriterText.length) {
+        typewriterElement.textContent += typewriterText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 80); // Adjust speed here (lower = faster)
+    }
+}
+
+// Start typing when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(typeWriter, 500); // Small delay before starting
+});
+
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
