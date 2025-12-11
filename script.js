@@ -1,47 +1,4 @@
-// ===== SCROLL ANIMATIONS =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all major sections
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.different-item, .feature-card, .step, .use-case-card');
-
-    sections.forEach((section, index) => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(section);
-    });
-});
-
-// ===== NAVBAR SCROLL EFFECT =====
-let lastScroll = 0;
-const nav = document.querySelector('.nav');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 100) {
-        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-    } else {
-        nav.style.boxShadow = 'none';
-    }
-
-    lastScroll = currentScroll;
-});
-
-// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -56,84 +13,139 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== FLOATING CARDS PARALLAX EFFECT =====
-const heroVisual = document.querySelector('.hero-visual');
-if (heroVisual) {
-    window.addEventListener('mousemove', (e) => {
-        const cards = document.querySelectorAll('.floating-card');
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
+// ===== NAVBAR SCROLL EFFECT =====
+const nav = document.querySelector('.nav');
+let lastScroll = 0;
 
-        cards.forEach((card, index) => {
-            const speed = (index + 1) * 10;
-            const x = (mouseX - 0.5) * speed;
-            const y = (mouseY - 0.5) * speed;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
 
-            card.style.transform = `translate(${x}px, ${y}px) translateY(-15px)`;
-        });
+    if (currentScroll > 50) {
+        nav.style.boxShadow = '0 4px 16px rgba(15, 23, 42, 0.1)';
+    } else {
+        nav.style.boxShadow = 'none';
+    }
+
+    lastScroll = currentScroll;
+});
+
+// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+        }
     });
-}
+}, observerOptions);
 
-// ===== BUTTON RIPPLE EFFECT =====
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
+// Observe elements
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.feature-box, .step-card, .use-case, .timeline-section');
 
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
-
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
+    elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
+        observer.observe(el);
     });
 });
 
-// Add ripple styles dynamically
+// Add class when visible
 const style = document.createElement('style');
 style.textContent = `
-    .btn {
-        position: relative;
-        overflow: hidden;
-    }
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s ease-out;
-        pointer-events: none;
-    }
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
+    .is-visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
 `;
 document.head.appendChild(style);
 
-// ===== GRADIENT ORB MOUSE TRACKING =====
-const orbs = document.querySelectorAll('.gradient-orb');
-window.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
+// ===== FORM SUBMISSION =====
+const feedbackForm = document.querySelector('.feedback-form');
+if (feedbackForm) {
+    const submitBtn = feedbackForm.querySelector('.btn-primary');
 
-    orbs.forEach((orb, index) => {
-        const speed = (index + 1) * 20;
-        const x = mouseX * speed;
-        const y = mouseY * speed;
+    submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
 
-        orb.style.transform = `translate(${x}px, ${y}px)`;
+        // Get form values
+        const select = feedbackForm.querySelector('.form-select');
+        const textarea = feedbackForm.querySelector('.form-textarea');
+        const email = feedbackForm.querySelector('.form-input');
+
+        if (!textarea.value.trim()) {
+            alert('Please tell us what\'s on your mind!');
+            return;
+        }
+
+        // Simulate submission
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            submitBtn.textContent = 'Sent! Thank you!';
+            submitBtn.style.background = 'linear-gradient(135deg, #27C93F, #20A837)';
+
+            // Reset form
+            setTimeout(() => {
+                textarea.value = '';
+                email.value = '';
+                select.selectedIndex = 0;
+                submitBtn.textContent = 'Send feedback';
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 2000);
+        }, 1000);
+    });
+}
+
+// ===== DOWNLOAD BUTTON INTERACTIONS =====
+const downloadButtons = document.querySelectorAll('.download-btn, .btn-primary, .btn-secondary');
+
+downloadButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        if (this.textContent.includes('Download')) {
+            // Simulate download action
+            const originalText = this.innerHTML;
+            this.innerHTML = 'Coming soon!';
+            this.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.style.pointerEvents = '';
+            }, 2000);
+        }
     });
 });
 
-// ===== LOG CONSOLE MESSAGE =====
-console.log('%cNotoNote', 'font-size: 40px; font-weight: bold; color: #00bcff;');
-console.log('%cYour clarity companion 💡', 'font-size: 16px; color: #6b7784;');
-console.log('Interested in how we built this? Check out the code!');
+// ===== LOGO EASTER EGG =====
+const heroLogo = document.querySelector('.hero-logo-big img');
+let clickCount = 0;
+
+if (heroLogo) {
+    heroLogo.addEventListener('click', () => {
+        clickCount++;
+
+        if (clickCount === 5) {
+            heroLogo.style.transform = 'rotate(360deg) scale(1.2)';
+            heroLogo.style.transition = 'transform 0.5s ease';
+
+            setTimeout(() => {
+                heroLogo.style.transform = '';
+            }, 500);
+
+            console.log('You found the friendly cloud!');
+            clickCount = 0;
+        }
+    });
+}
+
+// ===== CONSOLE MESSAGE =====
+console.log('%cNotoNote 💙', 'font-size: 32px; font-weight: bold; color: #1E88E5; font-family: Poppins, sans-serif;');
+console.log('%cYour clarity companion', 'font-size: 14px; color: #64748B;');
+console.log('\nWe love curious developers! Want to chat? hello@notonote.app');
