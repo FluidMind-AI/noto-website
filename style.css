@@ -1093,7 +1093,7 @@ section {
     }
 
     .hero-visual {
-        height: 420px;
+        height: 360px;
         margin-bottom: var(--space-2xl);
     }
 
@@ -1101,8 +1101,8 @@ section {
         width: 85%;
         max-width: 320px;
         left: 50%;
-        top: 45%;
-        transform: translate(-50%, -50%) rotate(0deg);
+        top: 120px;
+        transform: translateX(-50%) rotate(0deg);
     }
 
     .demo-transcript-card {
@@ -1110,8 +1110,8 @@ section {
         width: 80%;
         max-width: 300px;
         left: 50%;
-        top: 48%;
-        transform: translate(-50%, -50%) rotate(0deg);
+        top: 135px;
+        transform: translateX(-50%) rotate(0deg);
     }
 
     .demo-template-card {
@@ -1119,8 +1119,8 @@ section {
         width: 75%;
         max-width: 280px;
         left: 50%;
-        top: 51%;
-        transform: translate(-50%, -50%) rotate(0deg);
+        top: 150px;
+        transform: translateX(-50%) rotate(0deg);
     }
 
     .section-title {
