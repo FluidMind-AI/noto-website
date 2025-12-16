@@ -1093,15 +1093,33 @@ section {
     }
 
     .hero-visual {
-        height: 480px;
+        height: 420px;
         margin-bottom: var(--space-2xl);
     }
 
     .demo-chat-card {
-        width: 90%;
-        max-width: 340px;
+        width: 85%;
+        max-width: 320px;
         left: 50%;
-        top: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .demo-transcript-card {
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        left: 50%;
+        top: 48%;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    .demo-template-card {
+        display: block;
+        width: 75%;
+        max-width: 280px;
+        left: 50%;
+        top: 51%;
         transform: translate(-50%, -50%) rotate(0deg);
     }
 
