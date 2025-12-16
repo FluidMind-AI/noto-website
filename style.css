@@ -1093,36 +1093,6 @@ section {
     }
 
     .hero-visual {
-        height: 340px;
-        margin-bottom: var(--space-md);
-    }
-
-    .demo-chat-card {
-        width: 90% !important;
-        max-width: 340px !important;
-        left: 50% !important;
-        right: auto !important;
-        top: 10px !important;
-        bottom: auto !important;
-        margin: 0 !important;
-        transform: translateX(-50%) !important;
-        animation: mobileCardFloat 4s ease-in-out infinite !important;
-    }
-
-    @keyframes mobileCardFloat {
-        0%, 100% {
-            transform: translateX(-50%) translateY(0);
-        }
-        50% {
-            transform: translateX(-50%) translateY(-10px);
-        }
-    }
-
-    .demo-transcript-card {
-        display: none;
-    }
-
-    .demo-template-card {
         display: none;
     }
 
