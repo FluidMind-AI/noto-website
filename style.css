@@ -1093,12 +1093,15 @@ section {
     }
 
     .hero-visual {
-        height: 400px;
+        height: 480px;
+        margin-bottom: var(--space-2xl);
     }
 
     .demo-chat-card {
         width: 90%;
         max-width: 340px;
+        left: 50%;
+        top: 50%;
         transform: translate(-50%, -50%) rotate(0deg);
     }
 
