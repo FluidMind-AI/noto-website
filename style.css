@@ -1093,34 +1093,24 @@ section {
     }
 
     .hero-visual {
-        height: 360px;
-        margin-bottom: var(--space-2xl);
+        height: 320px;
+        margin-bottom: var(--space-xl);
     }
 
     .demo-chat-card {
-        width: 85%;
-        max-width: 320px;
+        width: 90%;
+        max-width: 340px;
         left: 50%;
-        top: 120px;
-        transform: translateX(-50%) rotate(0deg);
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .demo-transcript-card {
-        display: block;
-        width: 80%;
-        max-width: 300px;
-        left: 50%;
-        top: 135px;
-        transform: translateX(-50%) rotate(0deg);
+        display: none;
     }
 
     .demo-template-card {
-        display: block;
-        width: 75%;
-        max-width: 280px;
-        left: 50%;
-        top: 150px;
-        transform: translateX(-50%) rotate(0deg);
+        display: none;
     }
 
     .section-title {
