@@ -1,13 +1,47 @@
-// ===== TYPEWRITER EFFECT =====
-const typewriterText = "Turn conversations into clarity";
+// ===== TYPEWRITER EFFECT WITH ROTATING MESSAGES =====
+const typewriterMessages = [
+    "Turn conversations into clarity",
+    "Turn what's said into something useful",
+    "Let Noto listen. You stay present",
+    "Ask your notes and meetings anything",
+    "Everything said, easy to find"
+];
+
 const typewriterElement = document.getElementById('typewriter');
+let messageIndex = 0;
 let charIndex = 0;
+let isDeleting = false;
 
 function typeWriter() {
-    if (charIndex < typewriterText.length) {
-        typewriterElement.textContent += typewriterText.charAt(charIndex);
+    const currentMessage = typewriterMessages[messageIndex];
+
+    if (!isDeleting) {
+        // Typing forward
+        typewriterElement.textContent = currentMessage.substring(0, charIndex + 1);
         charIndex++;
-        setTimeout(typeWriter, 40); // Adjust speed here (lower = faster)
+
+        if (charIndex === currentMessage.length) {
+            // Message complete, pause then start deleting
+            isDeleting = true;
+            setTimeout(typeWriter, 2000); // Pause for 2 seconds
+            return;
+        }
+
+        setTimeout(typeWriter, 40); // Typing speed
+    } else {
+        // Deleting backward
+        typewriterElement.textContent = currentMessage.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+            // Deletion complete, move to next message
+            isDeleting = false;
+            messageIndex = (messageIndex + 1) % typewriterMessages.length;
+            setTimeout(typeWriter, 200); // Short pause before typing next message
+            return;
+        }
+
+        setTimeout(typeWriter, 20); // Deleting speed (faster)
     }
 }
 
