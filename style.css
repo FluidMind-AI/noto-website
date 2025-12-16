@@ -1048,18 +1048,16 @@ section {
 
     .demo-chat-card {
         left: 50%;
-        transform: translateX(-50%);
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     .demo-transcript-card {
-        left: 50%;
-        transform: translateX(-50%);
+        display: none;
     }
 
     .demo-template-card {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+        display: none;
     }
 
     .steps-grid {
@@ -1096,11 +1094,10 @@ section {
         height: 400px;
     }
 
-    .demo-chat-card,
-    .demo-transcript-card,
-    .demo-template-card {
+    .demo-chat-card {
         width: 90%;
         max-width: 340px;
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     .section-title {
