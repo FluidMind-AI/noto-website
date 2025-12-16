@@ -1098,13 +1098,14 @@ section {
     }
 
     .demo-chat-card {
-        width: 90%;
-        max-width: 340px;
-        left: 50%;
-        right: auto;
-        top: 20px;
-        margin: 0;
-        transform: translateX(-50%);
+        width: 90% !important;
+        max-width: 340px !important;
+        left: 50% !important;
+        right: auto !important;
+        top: 20px !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        transform: translateX(-50%) !important;
     }
 
     .demo-transcript-card {
