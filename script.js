@@ -1,9 +1,9 @@
 // ===== TYPEWRITER EFFECT WITH ROTATING MESSAGES =====
 const typewriterMessages = [
     "Turn conversations into clarity",
-    "Turn what's said into something useful",
+    "Make what you hear work for you",
     "Let Noto listen. You stay present",
-    "Ask your notes and meetings anything",
+    "Ask anything about what was said",
     "Everything said, easy to find"
 ];
 
