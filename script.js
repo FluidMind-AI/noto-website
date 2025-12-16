@@ -3,7 +3,7 @@ const typewriterMessages = [
     "Turn conversations into clarity",
     "Make what you hear work for you",
     "Let Noto listen. You stay present",
-    "Ask anything about what was said",
+    "Ask me anything about it",
     "Everything said, easy to find"
 ];
 
