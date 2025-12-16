@@ -1101,7 +1101,9 @@ section {
         width: 90%;
         max-width: 340px;
         left: 50%;
+        right: auto;
         top: 20px;
+        margin: 0;
         transform: translateX(-50%);
     }
 
