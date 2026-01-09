@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Confirmed - NotoNote</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: 'hsl(214, 100%, 42%)',
+              foreground: 'hsl(0, 0%, 100%)',
+              50: 'hsl(214, 100%, 97%)',
+              100: 'hsl(214, 100%, 92%)',
+              200: 'hsl(214, 100%, 82%)',
+              300: 'hsl(214, 100%, 72%)',
+              400: 'hsl(214, 100%, 52%)',
+              500: 'hsl(214, 100%, 42%)',
+              600: 'hsl(214, 100%, 35%)',
+              700: 'hsl(214, 100%, 28%)',
+            },
+            background: 'hsl(210, 25%, 98%)',
+            foreground: 'hsl(215, 30%, 20%)',
+            muted: {
+              DEFAULT: 'hsl(210, 25%, 95%)',
+              foreground: 'hsl(215, 20%, 40%)',
+            },
+          },
+          fontFamily: {
+            display: ['Bricolage Grotesque', 'sans-serif'],
+            sans: ['Manrope', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -0.011em;
+      background: linear-gradient(135deg, hsl(210, 25%, 98%) 0%, hsl(214, 40%, 96%) 100%);
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .shadow-premium {
+      box-shadow:
+        0 1px 2px 0 rgb(0 0 0 / 0.03),
+        0 4px 8px -2px rgb(0 0 0 / 0.05),
+        0 12px 24px -4px rgb(0 0 0 / 0.08);
+    }
+
+    .shadow-premium-lg {
+      box-shadow:
+        0 2px 4px 0 rgb(0 0 0 / 0.03),
+        0 8px 16px -4px rgb(0 0 0 / 0.08),
+        0 24px 48px -8px rgb(0 0 0 / 0.12);
+    }
+
+    /* Typing animation */
+    .typing-text {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid hsl(214, 100%, 42%);
+      animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: hsl(214, 100%, 42%); }
+    }
+
+    /* Success checkmark animation */
+    .checkmark-circle {
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+      stroke: hsl(152, 69%, 40%);
+      fill: none;
+      animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .checkmark-check {
+      transform-origin: 50% 50%;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      stroke: hsl(152, 69%, 40%);
+      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.4s forwards;
+    }
+
+    .checkmark-container {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: block;
+      stroke-width: 2;
+      stroke: hsl(152, 69%, 40%);
+      stroke-miterlimit: 10;
+      box-shadow: inset 0px 0px 0px hsl(152, 69%, 90%);
+      animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.7s both;
+    }
+
+    @keyframes stroke {
+      100% { stroke-dashoffset: 0; }
+    }
+
+    @keyframes scale {
+      0%, 100% { transform: none; }
+      50% { transform: scale3d(1.1, 1.1, 1); }
+    }
+
+    @keyframes fill {
+      100% { box-shadow: inset 0px 0px 0px 40px hsl(152, 69%, 95%); }
+    }
+
+    /* Fade in animation */
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .fade-in-delay-1 { animation-delay: 0.2s; }
+    .fade-in-delay-2 { animation-delay: 0.4s; }
+    .fade-in-delay-3 { animation-delay: 0.6s; }
+    .fade-in-delay-4 { animation-delay: 0.8s; }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Button hover effect */
+    .btn-primary {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px -5px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Floating animation for decorative elements */
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .float-delay {
+      animation: float 6s ease-in-out infinite;
+      animation-delay: -3s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 rounded-full blur-3xl float"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-100/40 rounded-full blur-3xl float-delay"></div>
+    <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-green-100/30 rounded-full blur-3xl float"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="relative z-10 w-full max-w-md">
+    <div class="glass rounded-3xl shadow-premium-lg p-8 md:p-10 text-center">
+      <!-- Logo -->
+      <div class="fade-in mb-6">
+        <img src="logo.png" alt="NotoNote" class="w-16 h-16 mx-auto rounded-2xl shadow-premium">
+      </div>
+
+      <!-- Success checkmark -->
+      <div class="fade-in fade-in-delay-1 flex justify-center mb-6">
+        <svg class="checkmark-container" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" stroke-width="3"/>
+        </svg>
+      </div>
+
+      <!-- Heading with typing effect -->
+      <div class="fade-in fade-in-delay-2 mb-4">
+        <h1 class="text-2xl md:text-3xl font-bold text-foreground font-display">
+          <span class="typing-text inline-block">Email Confirmed!</span>
+        </h1>
+      </div>
+
+      <!-- Description -->
+      <div class="fade-in fade-in-delay-3 mb-8">
+        <p class="text-muted-foreground text-base md:text-lg leading-relaxed">
+          Your email has been successfully verified. You can now sign in to NotoNote and start capturing your meetings.
+        </p>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="fade-in fade-in-delay-4">
+        <button id="openAppBtn" onclick="openNotoNote()" class="btn-primary inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:bg-primary-600 cursor-pointer border-none">
+          <span>Open NotoNote App</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <!-- Fallback message (hidden by default) -->
+        <p id="fallbackMessage" class="hidden mt-4 text-sm text-amber-600 bg-amber-50 rounded-lg p-3">
+          Couldn't open the app? Make sure NotoNote is installed and try again.
+        </p>
+      </div>
+
+      <!-- Additional info -->
+      <div class="fade-in fade-in-delay-4 mt-8 pt-6 border-t border-gray-200/50">
+        <p class="text-sm text-muted-foreground">
+          Don't have the app yet?
+          <a href="https://github.com/FluidMind-AI/notonote/releases/latest" class="text-primary hover:text-primary-600 font-medium underline underline-offset-2">
+            Download NotoNote
+          </a>
+        </p>
+      </div>
+
+      <script>
+        function openNotoNote() {
+          // Try to open the app via deep link
+          const deepLink = 'notonote://email-confirmed';
+
+          // Create a hidden iframe to try opening the deep link
+          const iframe = document.createElement('iframe');
+          iframe.style.display = 'none';
+          iframe.src = deepLink;
+          document.body.appendChild(iframe);
+
+          // Also try with window.location as a fallback
+          setTimeout(() => {
+            window.location.href = deepLink;
+          }, 100);
+
+          // Show fallback message after a delay if the app didn't open
+          setTimeout(() => {
+            document.getElementById('fallbackMessage').classList.remove('hidden');
+          }, 2500);
+
+          // Clean up iframe
+          setTimeout(() => {
+            document.body.removeChild(iframe);
+          }, 3000);
+        }
+      </script>
+    </div>
+
+    <!-- Footer -->
+    <div class="fade-in fade-in-delay-4 text-center mt-6">
+      <p class="text-sm text-muted-foreground/70">
+        &copy; 2025 NotoNote. All rights reserved.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
