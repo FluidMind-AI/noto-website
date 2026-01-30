@@ -257,6 +257,7 @@ body {
 .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-xs);
     padding: 0.85rem 1.75rem;
     border-radius: var(--radius-md);
