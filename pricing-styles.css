@@ -2,7 +2,7 @@
 
 /* --- Hero --- */
 .pricing-hero {
-    padding: calc(80px + var(--space-3xl)) 0 var(--space-2xl);
+    padding: calc(80px + var(--space-3xl)) 0 var(--space-lg);
     background: linear-gradient(180deg, var(--color-sky-50) 0%, var(--color-white) 100%);
     text-align: center;
 }
@@ -46,7 +46,7 @@
 
 /* --- Toggle --- */
 .pricing-plans {
-    padding: var(--space-xl) 0 var(--space-3xl);
+    padding: var(--space-md) 0 var(--space-3xl);
     background: var(--color-white);
 }
 
