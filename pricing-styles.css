@@ -616,6 +616,7 @@
 .pricing-cta .btn-primary {
     background: var(--color-white);
     color: var(--brand-blue);
+    text-align: center;
 }
 
 .pricing-cta .btn-primary:hover {

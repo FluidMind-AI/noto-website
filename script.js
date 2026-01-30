@@ -228,6 +228,35 @@ if (bubbleElement) {
     setInterval(rotateBubbleMessage, 5000);
 }
 
+// ===== MOBILE HAMBURGER MENU =====
+(function () {
+    var hamburger = document.querySelector('.nav-hamburger');
+    var nav = document.querySelector('.nav');
+    if (!hamburger || !nav) return;
+
+    hamburger.addEventListener('click', function () {
+        var isOpen = nav.classList.toggle('menu-open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close on nav link click
+    var navLinks = nav.querySelectorAll('.nav-center a');
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            nav.classList.remove('menu-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+        if (!nav.contains(e.target)) {
+            nav.classList.remove('menu-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    });
+})();
+
 // ===== CONSOLE MESSAGE =====
 console.log('%cNotoNote 💙', 'font-size: 32px; font-weight: bold; color: #1E88E5; font-family: Poppins, sans-serif;');
 console.log('%cYour clarity companion', 'font-size: 14px; color: #64748B;');
