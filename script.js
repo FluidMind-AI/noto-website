@@ -257,7 +257,15 @@ if (bubbleElement) {
     });
 })();
 
+// ===== DYNAMIC COPYRIGHT YEAR =====
+(function () {
+    var yearEl = document.getElementById('copyright-year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+})();
+
 // ===== CONSOLE MESSAGE =====
 console.log('%cNotoNote 💙', 'font-size: 32px; font-weight: bold; color: #1E88E5; font-family: Poppins, sans-serif;');
-console.log('%cYour clarity companion', 'font-size: 14px; color: #64748B;');
+console.log('%cNever Miss What Matters', 'font-size: 14px; color: #64748B;');
 console.log('\nWe love curious developers! Want to chat? hello@notonote.app');

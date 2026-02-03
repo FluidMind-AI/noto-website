@@ -145,6 +145,7 @@
     overflow: hidden;
     pointer-events: none;
     z-index: 5;
+    border-radius: 0 var(--radius-xl) 0 0;
 }
 
 /* Classic corner ribbon: equal top & right keeps text centered on diagonal */
@@ -651,6 +652,22 @@
     .pricing-cards {
         grid-template-columns: 1fr;
         max-width: 440px;
+    }
+
+    .ribbon-clip {
+        width: 120px;
+        height: 120px;
+    }
+
+    .founders-ribbon {
+        top: 16px;
+        right: -38px;
+        width: 180px;
+    }
+
+    .founders-ribbon span {
+        font-size: 0.6rem;
+        padding: 0.4rem 0 0.4rem 16px;
     }
 
     .card-pro {
