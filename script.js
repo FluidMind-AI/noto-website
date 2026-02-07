@@ -157,7 +157,7 @@ if (feedbackForm) {
 }
 
 // ===== DOWNLOAD BUTTON INTERACTIONS =====
-const downloadButtons = document.querySelectorAll('.download-btn, .btn-primary, .btn-secondary');
+const downloadButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
 
 downloadButtons.forEach(button => {
     button.addEventListener('click', function() {

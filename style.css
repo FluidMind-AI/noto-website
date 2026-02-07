@@ -160,6 +160,7 @@ body {
     gap: var(--space-xs);
     background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark));
     color: var(--color-white);
+    text-decoration: none;
     border: none;
     padding: 0.65rem 1.5rem;
     border-radius: var(--radius-full);
@@ -287,9 +288,14 @@ body {
     border: 2px solid var(--color-gray-300);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover:not(.btn-disabled) {
     border-color: var(--brand-blue);
     background: var(--color-sky-50);
+}
+
+.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .btn-large {
@@ -933,7 +939,7 @@ section {
     border-color: var(--color-white);
 }
 
-.cta-section .btn-secondary:hover {
+.cta-section .btn-secondary:hover:not(.btn-disabled) {
     background: rgba(255, 255, 255, 0.1);
 }
 
