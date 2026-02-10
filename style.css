@@ -1151,6 +1151,12 @@ section {
         padding-top: var(--space-md);
     }
 
+    .nav-center .mobile-download-disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        color: var(--color-gray-500);
+    }
+
     .hero-title {
         font-size: 2.5rem;
         min-height: 9rem;
