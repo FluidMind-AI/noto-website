@@ -275,6 +275,7 @@
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 6;
     padding: 0.3rem 1rem;
     border-radius: var(--radius-full);
     font-size: 0.75rem;
