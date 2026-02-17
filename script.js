@@ -156,24 +156,6 @@ if (feedbackForm) {
     });
 }
 
-// ===== DOWNLOAD BUTTON INTERACTIONS =====
-const downloadButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
-
-downloadButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        if (this.textContent.includes('Download')) {
-            // Simulate download action
-            const originalText = this.innerHTML;
-            this.innerHTML = 'Coming soon!';
-            this.style.pointerEvents = 'none';
-
-            setTimeout(() => {
-                this.innerHTML = originalText;
-                this.style.pointerEvents = '';
-            }, 2000);
-        }
-    });
-});
 
 // ===== LOGO EASTER EGG =====
 const heroLogo = document.querySelector('.hero-logo-big img');
