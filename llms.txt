@@ -1,0 +1,24 @@
+# NotoNote
+
+> Private, on-device AI meeting notes and transcription for Mac. Turn conversations into clarity — capture, transcribe, summarize, and chat with your meetings. Nothing leaves your device unless you choose to share it.
+
+NotoNote is a macOS desktop app from FluidMind. It records meetings, lectures, and conversations, transcribes them on-device with multi-language support, organizes the output through custom templates, and lets you chat with an AI assistant that knows what was said. There is no LLM training on user content, and no cloud sync by default.
+
+## Pages
+
+- [Home](https://notonote.ai/): Product overview, features, and download
+- [Pricing](https://notonote.ai/pricing.html): Free plan, Pro (30-day free trial, $7.49/mo annual or $9.99/mo monthly), Founders Lifetime ($129 one-time, limited to 200), and Pro+ (coming soon)
+- [Roadmap](https://notonote.ai/roadmap.html): School Mode, mobile apps, Recipes, and upcoming features
+- [Privacy Policy](https://notonote.ai/privacy.html): How user data is handled — on-device by default
+- [Terms & Conditions](https://notonote.ai/terms.html): User agreement
+- [Cookie Policy](https://notonote.ai/cookies.html): Cookie usage on the marketing site
+
+## Download
+
+- macOS (Apple Silicon): https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg
+
+## Contact
+
+- Email: hello@fluidmind.ai
+- Telegram: https://t.me/notonote_official
+- Discord: https://discord.com/invite/FXgN52acgG

@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NotoNote — Your Clarity Companion</title>
-    <meta name="description" content="Turn conversations into clarity. NotoNote captures what's said and transforms it into organized notes, clear answers, and real understanding.">
+    <title>NotoNote — Private AI Meeting Notes for Mac</title>
+    <meta name="description" content="Turn conversations into clarity. NotoNote is a private, on-device AI meeting notes app for Mac. Transcribe, summarize, and ask anything — free.">
+    <meta name="keywords" content="AI meeting notes, private transcription, Mac AI notes, meeting summarizer, clarity companion, AI assistant, on-device AI, multilingual transcription">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NotoNote">
+    <link rel="canonical" href="https://notonote.ai/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -13,16 +17,84 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NotoNote">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://notonote.ai/">
-    <meta property="og:title" content="NotoNote — Your Clarity Companion">
-    <meta property="og:description" content="Turn conversations into clarity. NotoNote captures what's said and transforms it into organized notes, clear answers, and real understanding. Free to use, 100% private.">
+    <meta property="og:title" content="NotoNote — Private AI Meeting Notes for Mac">
+    <meta property="og:description" content="Turn conversations into clarity. NotoNote is a private, on-device AI meeting notes app for Mac. Transcribe, summarize, and ask anything — free.">
     <meta property="og:image" content="https://notonote.ai/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NotoNote — Your Clarity Companion">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NotoNote — Your Clarity Companion">
-    <meta name="twitter:description" content="Turn conversations into clarity. Free to use, 100% private.">
+    <meta name="twitter:title" content="NotoNote — Private AI Meeting Notes for Mac">
+    <meta name="twitter:description" content="Turn conversations into clarity. Private, on-device AI meeting notes for Mac. Free.">
     <meta name="twitter:image" content="https://notonote.ai/og-image.png">
+    <meta name="twitter:image:alt" content="NotoNote — Your Clarity Companion">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://notonote.ai/#organization",
+          "name": "NotoNote",
+          "url": "https://notonote.ai/",
+          "logo": "https://notonote.ai/logo.png",
+          "email": "hello@fluidmind.ai",
+          "sameAs": [
+            "https://t.me/notonote_official",
+            "https://discord.com/invite/FXgN52acgG"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://notonote.ai/#website",
+          "url": "https://notonote.ai/",
+          "name": "NotoNote",
+          "description": "Private, on-device AI meeting notes and transcription for Mac.",
+          "publisher": { "@id": "https://notonote.ai/#organization" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://notonote.ai/#app",
+          "name": "NotoNote",
+          "applicationCategory": "ProductivityApplication",
+          "operatingSystem": "macOS",
+          "url": "https://notonote.ai/",
+          "description": "Private, on-device AI meeting notes and transcription for Mac. Capture, transcribe, summarize, and chat with your conversations.",
+          "image": "https://notonote.ai/og-image.png",
+          "softwareVersion": "1.2.1",
+          "downloadUrl": "https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg",
+          "featureList": [
+            "On-device transcription",
+            "AI meeting summaries",
+            "Chat with your meetings",
+            "Custom templates",
+            "Multilingual support"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "publisher": { "@id": "https://notonote.ai/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://notonote.ai/" }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="callout-styles.css">
@@ -74,7 +146,8 @@
                 </div>
 
                 <h1 class="hero-title">
-                    <span id="typewriter"></span><span class="cursor">|</span>
+                    <span class="visually-hidden">NotoNote: Turn conversations into clarity</span>
+                    <span id="typewriter" aria-hidden="true"></span><span class="cursor" aria-hidden="true">|</span>
                 </h1>
 
                 <p class="hero-subtitle">
