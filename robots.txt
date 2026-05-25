@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /draft-1.html
+Disallow: /index-draft2.html
+Disallow: /email-confirmed.html
+
+Sitemap: https://notonote.ai/sitemap.xml
