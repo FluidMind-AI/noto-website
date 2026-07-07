@@ -295,6 +295,51 @@
     color: var(--color-white);
 }
 
+.badge-sold-out {
+    background: var(--color-gray-500);
+    color: var(--color-white);
+}
+
+/* --- Sold Out state (Founders Lifetime) --- */
+.pricing-card.is-sold-out {
+    background: var(--color-gray-50);
+    border-color: var(--color-gray-200);
+}
+
+/* Grey out the card content, but keep badge/ribbon fully legible */
+.pricing-card.is-sold-out .card-top,
+.pricing-card.is-sold-out .card-divider,
+.pricing-card.is-sold-out .card-features {
+    opacity: 0.55;
+    filter: grayscale(1);
+}
+
+/* Neutralize the golden ribbon */
+.pricing-card.is-sold-out .founders-ribbon span {
+    background: linear-gradient(180deg, #9CA3AF 0%, #6B7280 100%);
+    color: var(--color-white);
+    box-shadow:
+        0 3px 10px rgba(107, 114, 128, 0.35),
+        0 1px 0 rgba(255, 255, 255, 0.25) inset,
+        0 -1px 0 rgba(0, 0, 0, 0.12) inset;
+}
+
+/* Disable hover lift on a sold-out card */
+.pricing-card.is-sold-out:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Disabled CTA button */
+.card-cta-disabled {
+    background: var(--color-gray-200);
+    color: var(--color-gray-500);
+    border: 1px solid var(--color-gray-300);
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+}
+
 /* Card Header */
 .card-header {
     text-align: center;
