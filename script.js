@@ -1,62 +1,67 @@
 // ===== TYPEWRITER EFFECT WITH ROTATING MESSAGES =====
-const typewriterMessages = [
-    "Turn conversations into clarity",
-    "Make what you hear work for you",
-    "Ask me anything about it",
-    "Let Noto listen. You stay present",
-    "Everything said, easy to find"
-];
-
+// Messages come from the element's data-messages attribute so every page
+// can define its own rotation while sharing this script.
 const typewriterElement = document.getElementById('typewriter');
-let messageIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
 
-function typeWriter() {
-    const currentMessage = typewriterMessages[messageIndex];
+if (typewriterElement) {
+    let typewriterMessages = [];
+    try {
+        typewriterMessages = JSON.parse(typewriterElement.dataset.messages || '[]');
+    } catch (e) {
+        typewriterMessages = [];
+    }
 
-    if (!isDeleting) {
-        // Typing forward
-        typewriterElement.textContent = currentMessage.substring(0, charIndex + 1);
-        charIndex++;
+    let messageIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-        if (charIndex === currentMessage.length) {
-            // Message complete, pause then start deleting
-            isDeleting = true;
-            setTimeout(typeWriter, 2000); // Pause for 2 seconds
-            return;
+    function typeWriter() {
+        const currentMessage = typewriterMessages[messageIndex];
+
+        if (!isDeleting) {
+            // Typing forward
+            typewriterElement.textContent = currentMessage.substring(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex === currentMessage.length) {
+                // Message complete, pause then start deleting
+                isDeleting = true;
+                setTimeout(typeWriter, 2000);
+                return;
+            }
+
+            setTimeout(typeWriter, 40); // Typing speed
+        } else {
+            // Deleting backward
+            typewriterElement.textContent = currentMessage.substring(0, charIndex - 1);
+            charIndex--;
+
+            if (charIndex === 0) {
+                // Deletion complete, move to next message
+                isDeleting = false;
+                messageIndex = (messageIndex + 1) % typewriterMessages.length;
+                setTimeout(typeWriter, 200);
+                return;
+            }
+
+            setTimeout(typeWriter, 20); // Deleting speed (faster)
         }
+    }
 
-        setTimeout(typeWriter, 40); // Typing speed
-    } else {
-        // Deleting backward
-        typewriterElement.textContent = currentMessage.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-            // Deletion complete, move to next message
-            isDeleting = false;
-            messageIndex = (messageIndex + 1) % typewriterMessages.length;
-            setTimeout(typeWriter, 200); // Short pause before typing next message
-            return;
-        }
-
-        setTimeout(typeWriter, 20); // Deleting speed (faster)
+    if (typewriterMessages.length) {
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(typeWriter, 500);
+        });
     }
 }
-
-// Start typing when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(typeWriter, 500); // Small delay before starting
-});
 
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80;
+            e.preventDefault();
+            const offsetTop = target.offsetTop - 72;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -65,150 +70,85 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== NAVBAR SCROLL EFFECT =====
-const nav = document.querySelector('.nav');
-let lastScroll = 0;
+// ===== SCROLL ENGINE (progress bar, scenes, cues) =====
+(function () {
+    const nav = document.querySelector('.nav');
+    const progressBar = document.getElementById('scroll-fill');
+    const scenes = document.querySelectorAll('[data-scene]');
+    const recTimer = document.getElementById('rec-timer');
+    const featuresCue = document.getElementById('features-cue');
+    const featuresSection = document.getElementById('features');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    function update() {
+        const vh = window.innerHeight;
 
-    if (currentScroll > 50) {
-        nav.style.boxShadow = '0 4px 16px rgba(15, 23, 42, 0.1)';
-    } else {
-        nav.style.boxShadow = 'none';
+        // Nav shadow once scrolled
+        if (nav) {
+            nav.style.boxShadow = window.pageYOffset > 50 ? '0 4px 16px rgba(15, 23, 42, 0.1)' : 'none';
+        }
+
+        // Scroll progress bar
+        if (progressBar) {
+            const d = document.documentElement;
+            const denom = d.scrollHeight - d.clientHeight;
+            progressBar.style.width = (denom > 0 ? (d.scrollTop / denom) * 100 : 0) + '%';
+        }
+
+        // Per-scene progress p ∈ [0,1] drives all in-scene reveals via --p
+        let firstSceneP = 0;
+        scenes.forEach((el, i) => {
+            let p;
+            if (reduceMotion.matches) {
+                p = 1; // show final state, no scroll animation
+            } else {
+                const rect = el.getBoundingClientRect();
+                const total = el.offsetHeight - vh; // scrollable travel
+                p = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 1;
+            }
+            el.style.setProperty('--p', p.toFixed(4));
+
+            // If the scene's content is taller than the viewport (small screens),
+            // pan it upward as p advances so late reveals scroll into view.
+            const inner = el.querySelector('.scene-sticky > *');
+            if (inner) {
+                const over = Math.max(0, inner.offsetHeight + 16 - vh);
+                el.style.setProperty('--overshoot', Math.round(over) + 'px');
+                el.classList.toggle('scene--tall', over > 8);
+            }
+            if (i === 0) firstSceneP = p;
+        });
+
+        // Recording timer counts up with the Capture scene
+        if (recTimer) {
+            const secs = Math.round(Math.min(1, Math.max(0, (firstSceneP - 0.4) / 0.55)) * 47);
+            recTimer.textContent = '00:' + String(secs).padStart(2, '0');
+        }
+
+        // "Keep scrolling" cue fades out as the statement scrolls past
+        if (featuresCue && featuresSection) {
+            const rect = featuresSection.getBoundingClientRect();
+            const op = Math.max(0, Math.min(1, (rect.bottom - vh * 0.35) / (vh * 0.25)));
+            featuresCue.style.opacity = op.toFixed(3);
+            featuresCue.style.pointerEvents = op < 0.05 ? 'none' : 'auto';
+        }
     }
 
-    lastScroll = currentScroll;
-});
-
-// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-        }
-    });
-}, observerOptions);
-
-// Observe elements
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.feature-box, .step-card, .use-case, .timeline-section');
-
-    elements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
-        observer.observe(el);
-    });
-});
-
-// Add class when visible
-const style = document.createElement('style');
-style.textContent = `
-    .is-visible {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
+    let raf = null;
+    function onScroll() {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+            raf = null;
+            update();
+        });
     }
-`;
-document.head.appendChild(style);
 
-// ===== FORM SUBMISSION =====
-const feedbackForm = document.querySelector('.feedback-form');
-if (feedbackForm) {
-    const submitBtn = feedbackForm.querySelector('.btn-primary');
-
-    submitBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        // Get form values
-        const select = feedbackForm.querySelector('.form-select');
-        const textarea = feedbackForm.querySelector('.form-textarea');
-        const email = feedbackForm.querySelector('.form-input');
-
-        if (!textarea.value.trim()) {
-            alert('Please tell us what\'s on your mind!');
-            return;
-        }
-
-        // Simulate submission
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-            submitBtn.textContent = 'Sent! Thank you!';
-            submitBtn.style.background = 'linear-gradient(135deg, #27C93F, #20A837)';
-
-            // Reset form
-            setTimeout(() => {
-                textarea.value = '';
-                email.value = '';
-                select.selectedIndex = 0;
-                submitBtn.textContent = 'Send feedback';
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-            }, 2000);
-        }, 1000);
-    });
-}
-
-
-// ===== LOGO EASTER EGG =====
-const heroLogo = document.querySelector('.hero-logo-big img');
-let clickCount = 0;
-
-if (heroLogo) {
-    heroLogo.addEventListener('click', () => {
-        clickCount++;
-
-        if (clickCount === 5) {
-            heroLogo.style.transform = 'rotate(360deg) scale(1.2)';
-            heroLogo.style.transition = 'transform 0.5s ease';
-
-            setTimeout(() => {
-                heroLogo.style.transform = '';
-            }, 500);
-
-            console.log('You found the friendly cloud!');
-            clickCount = 0;
-        }
-    });
-}
-
-// ===== ROTATING BUBBLE MESSAGES =====
-const bubbleMessages = [
-    '<strong>No annoying meeting prompts.</strong> I work silently in the background while you focus on what matters.',
-    '<strong>I summarize everything.</strong> Turn long meetings into clear, structured notes you can actually use.',
-    '<strong>Ask me anything.</strong> Get answers about the meeting, create follow-up emails, draft action items—whatever you need.'
-];
-
-let currentMessageIndex = 0;
-const bubbleElement = document.getElementById('bubble-message');
-
-function rotateBubbleMessage() {
-    if (!bubbleElement) return;
-
-    // Fade out
-    bubbleElement.style.opacity = '0';
-
-    setTimeout(() => {
-        // Change message
-        currentMessageIndex = (currentMessageIndex + 1) % bubbleMessages.length;
-        bubbleElement.innerHTML = bubbleMessages[currentMessageIndex];
-
-        // Fade in
-        bubbleElement.style.opacity = '1';
-    }, 500);
-}
-
-// Rotate messages every 5 seconds
-if (bubbleElement) {
-    setInterval(rotateBubbleMessage, 5000);
-}
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    if (reduceMotion.addEventListener) reduceMotion.addEventListener('change', onScroll);
+    document.addEventListener('DOMContentLoaded', update);
+    update();
+})();
 
 // ===== MOBILE HAMBURGER MENU =====
 (function () {
@@ -237,6 +177,30 @@ if (bubbleElement) {
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
+})();
+
+// ===== LOGO EASTER EGG =====
+(function () {
+    const heroLogo = document.querySelector('.hero-logo img');
+    let clickCount = 0;
+
+    if (heroLogo) {
+        heroLogo.addEventListener('click', () => {
+            clickCount++;
+
+            if (clickCount === 5) {
+                heroLogo.style.transform = 'rotate(360deg) scale(1.2)';
+                heroLogo.style.transition = 'transform 0.5s ease';
+
+                setTimeout(() => {
+                    heroLogo.style.transform = '';
+                }, 500);
+
+                console.log('You found the friendly cloud!');
+                clickCount = 0;
+            }
+        });
+    }
 })();
 
 // ===== DYNAMIC COPYRIGHT YEAR =====

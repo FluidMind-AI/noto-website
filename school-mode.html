@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Mode — NotoNote</title>
+    <meta name="description" content="School Mode turns NotoNote into a study companion: your class schedule on a grid, alarms that start recording for you, and lecture notes structured for studying.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://notonote.ai/school-mode.html">
+    <meta property="og:title" content="School Mode — NotoNote">
+    <meta property="og:description" content="Never miss a lecture. Your class schedule on a grid, alarms that start recording for you, and lecture notes structured for studying.">
+    <meta property="og:image" content="https://notonote.ai/og-image.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="school">
+    <!-- Navigation -->
+    <div class="site-top">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <a href="index.html" class="logo">
+                        <img src="logo.png" alt="NotoNote" class="logo-img">
+                        <span class="logo-text">NotoNote</span>
+                    </a>
+                </div>
+
+                <div class="nav-center">
+                    <a href="index.html#features">Features</a>
+                    <a href="school-mode.html" class="nav-active">School Mode</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="mailto:hello@fluidmind.ai">Contact Us</a>
+                    <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="mobile-download-btn">Download Free</a>
+                </div>
+
+                <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <div class="nav-right">
+                    <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="download-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
+                            <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
+                        </svg>
+                        Download Free
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="scroll-progress" id="scroll-fill"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-cinematic" id="top">
+        <div class="hero-core">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                School Mode, Next Up
+            </div>
+
+            <div class="hero-logo">
+                <img src="logo.png" alt="NotoNote">
+            </div>
+
+            <h1 class="hero-title"><span id="typewriter" data-messages='["Never miss a lecture","Understand, don’t just record","Your semester, organized","Ask your notes anything","Study what was actually taught"]'></span><span class="cursor">|</span></h1>
+
+            <div class="hero-callout hero-callout--orange">
+                <p class="hero-callout-privacy">Built for students and educators.</p>
+                <p class="hero-callout-free">Arrives as a free update to NotoNote.</p>
+            </div>
+
+            <div class="hero-note">Lectures · Seminars · Labs · Study groups</div>
+        </div>
+
+        <a href="#tour" class="scroll-cue">
+            <span class="cue-label">Scroll to see your semester</span>
+            <svg class="cue-chevron" width="22" height="22" viewBox="0 0 20 20" fill="none">
+                <path d="M4 7l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Features statement -->
+    <section class="statement" id="features">
+        <p>School Mode turns NotoNote into a study companion: your class schedule on a grid, alarms that start recording for you, and <strong>lecture notes structured for studying</strong>, with answers from everything your professor said.</p>
+    </section>
+
+    <!-- Scene 1 — Schedule -->
+    <section class="scene" data-scene id="tour" style="background:linear-gradient(180deg,#FFFFFF 0%,#F0F9FF 100%);">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-right">
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">01 · Schedule</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">Your whole week, on one grid.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">Add your classes once, each one gets its own color and folder. Lecture moved? Cancelled? Drag it, and Noto keeps up. You can even import your schedule from a photo.</p>
+                    <div class="scene-chip scene-chip--orange rv rv-y" style="--rs:.72; --rd:.1; --ry:16px;">
+                        <span class="chip-dot"></span>
+                        Snap a photo of your schedule, Noto fills the grid
+                    </div>
+                </div>
+
+                <div class="scene-mock rv rv-y" style="--rs:.04; --rd:.1; --ry:50px;">
+                    <div class="mock-card">
+                        <div class="week-header">
+                            <span class="week-title">Week of Oct 12</span>
+                            <span class="week-term">Fall term</span>
+                            <span class="week-add">+ Add class</span>
+                        </div>
+                        <div class="week-grid">
+                            <div class="week-day-label">Mon</div>
+                            <div class="week-day-label">Tue</div>
+                            <div class="week-day-label">Wed</div>
+                            <div class="week-day-label">Thu</div>
+                            <div class="week-day-label">Fri</div>
+                            <div class="week-col">
+                                <div class="class-block class--chem rv" style="top:22%; height:10%; --rs:.14; --rd:.05;">
+                                    <div class="class-name">Organic Chem</div>
+                                    <div class="class-time">10:00</div>
+                                </div>
+                                <div class="class-block class--cogsci rv" style="top:56%; height:14%; --rs:.26; --rd:.05;">
+                                    <div class="class-name">Cognitive Sci</div>
+                                    <div class="class-time">1:00</div>
+                                </div>
+                            </div>
+                            <div class="week-col">
+                                <div class="class-block class--linalg rv" style="top:11%; height:14%; --rs:.2; --rd:.05;">
+                                    <div class="class-name">Linear Algebra</div>
+                                    <div class="class-time">9:00</div>
+                                </div>
+                            </div>
+                            <div class="week-col">
+                                <div class="class-block class--chem class--cancelled" style="top:22%; height:10%;">
+                                    <div class="class-name">Organic Chem</div>
+                                    <div class="class-cancelled-tag">Cancelled</div>
+                                </div>
+                                <div class="class-block class--cogsci rv" style="top:56%; height:14%; --rs:.26; --rd:.05;">
+                                    <div class="class-name">Cognitive Sci</div>
+                                    <div class="class-time">1:00</div>
+                                </div>
+                            </div>
+                            <div class="week-col">
+                                <div class="class-block class--linalg rv" style="top:11%; height:14%; --rs:.2; --rd:.05;">
+                                    <div class="class-name">Linear Algebra</div>
+                                    <div class="class-time">9:00</div>
+                                </div>
+                                <div class="class-block class--studio rv" style="top:66%; height:22%; --rs:.32; --rd:.05;">
+                                    <div class="class-name">Design Studio</div>
+                                    <div class="class-time">2:00</div>
+                                </div>
+                            </div>
+                            <div class="week-col">
+                                <div class="class-block class--chem rv" style="top:22%; height:10%; --rs:.14; --rd:.05;">
+                                    <div class="class-name">Organic Chem</div>
+                                    <div class="class-time">10:00</div>
+                                </div>
+                                <div class="class-block class--moved rv" style="top:66%; height:10%; --rs:.6; --rd:.06;">
+                                    <div class="class-name">Organic Chem</div>
+                                    <div class="class-time">Moved · 2:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 2 — Alarms -->
+    <section class="scene" data-scene id="scene-alarms" style="background:#FFFFFF;">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-left">
+                <div class="scene-mock alarms-wrap">
+                    <div class="notif-card rv rv-x" style="--rs:.1; --rd:.07;">
+                        <div class="notif-row">
+                            <img src="logo.png" alt="">
+                            <div class="notif-body">
+                                <div class="notif-title-row">
+                                    <span class="notif-title">Organic Chemistry in 10 minutes</span>
+                                    <span class="notif-when">now</span>
+                                </div>
+                                <div class="notif-sub">10:00 · Room 204 · Prof. Kim</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notif-card rv rv-x" style="--rs:.3; --rd:.07;">
+                        <div class="notif-row">
+                            <img src="logo.png" alt="">
+                            <div class="notif-body">
+                                <div class="notif-title-row">
+                                    <span class="notif-title">Organic Chemistry is starting</span>
+                                    <span class="notif-when">now</span>
+                                </div>
+                                <div class="notif-sub" style="margin-bottom:10px;">Want me to take notes?</div>
+                                <div class="notif-actions" style="margin-top:0;">
+                                    <span class="notif-record-btn">
+                                        <span class="ring-pulse ring-pulse--pill rv-window" style="--rs:.4; --rd:.05; --os:.58; --od:.05;"></span>
+                                        <span class="rec-dot"></span>
+                                        Start recording
+                                    </span>
+                                    <span class="notif-dismiss">Dismiss</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recording-pill rv rv-y" style="--rs:.62; --rd:.08; --ry:14px;">
+                        <span class="pulse-dot"></span>
+                        <span class="rec-label">Recording</span>
+                        <span class="rec-filed">· auto-filed to</span>
+                        <span class="class-tag"><span class="tag-square"></span>Organic Chemistry</span>
+                    </div>
+                    <div class="cursor-dot cursor-dot--alarm"></div>
+                </div>
+
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">02 · Alarms</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">Never walk in late. Never start blank.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">A heads-up before every class, and a nudge when it starts. One click and Noto is recording, the lecture files itself into the right class folder automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 3 — Lecture notes -->
+    <section class="scene" data-scene id="scene-lecture" style="background:#F8FAFC;">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-right">
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">03 · Lecture notes</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">Notes built for studying, not just reading.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">Lectures get their own summary template: key concepts explained, definitions collected, homework caught with its due date, and everything the professor hinted would be on the exam.</p>
+                    <div class="scene-chip rv rv-y" style="--rs:.7; --rd:.1; --ry:16px;">
+                        <span class="chip-dot"></span>
+                        Homework and exam hints, caught automatically
+                    </div>
+                </div>
+
+                <div class="scene-mock rv rv-y" style="--rs:.04; --rd:.1; --ry:50px;">
+                    <div class="mock-card">
+                        <div class="lecture-header">
+                            <span class="class-square"></span>
+                            <span class="lecture-title">Organic Chemistry, Lecture 12</span>
+                            <span class="lecture-meta">Oct 14 · 48 min</span>
+                        </div>
+                        <div class="lecture-body">
+                            <div class="note-section rv" style="--rs:.2; --rd:.05;">
+                                <span class="inline-heading">Topic</span>
+                                <span class="inline-text"> Nucleophilic substitution, SN1 vs SN2 mechanisms.</span>
+                            </div>
+                            <div class="note-section rv" style="--rs:.32; --rd:.05;">
+                                <h5>Key Concepts</h5>
+                                <div class="bullet-col">
+                                    <div class="bullet-row"><span class="bullet">•</span><span><strong>SN2</strong>, one-step "backside attack"; rate depends on both reactants.</span></div>
+                                    <div class="bullet-row"><span class="bullet">•</span><span><strong>Steric hindrance</strong>, bulky groups block the attack and slow SN2.</span></div>
+                                </div>
+                            </div>
+                            <div class="note-section rv" style="--rs:.46; --rd:.05;">
+                                <h5>Homework</h5>
+                                <div class="homework-row">
+                                    <span class="hw-checkbox"></span>
+                                    Problem set 6, questions 1–8
+                                    <span class="hw-due-tag">"by next Friday"</span>
+                                </div>
+                            </div>
+                            <div class="note-section rv" style="--rs:.58; --rd:.05;">
+                                <h5>Exam topics mentioned</h5>
+                                <div class="bullet-col">
+                                    <div class="bullet-row star-row"><span class="bullet">★</span> Energy diagrams for SN1 vs SN2</div>
+                                    <div class="bullet-row star-row"><span class="bullet">★</span> Predicting products from substrate structure</div>
+                                </div>
+                            </div>
+                            <div class="done-banner rv rv-y" style="--rs:.74; --rd:.08; --ry:10px;">Lecture notes ready</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 4 — Ask your notes -->
+    <section class="scene" data-scene id="scene-ask" style="background:linear-gradient(180deg,#F8FAFC 0%,#F0F9FF 100%);">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-left">
+                <div class="scene-mock chat-mock-wrap rv rv-y" style="--rs:.02; --rd:.08; --ry:50px;">
+                    <div class="mock-card">
+                        <div class="chat-header">
+                            <img src="logo.png" alt="">
+                            <span class="chat-title">Ask Noto</span>
+                            <span class="chat-context">Organic Chemistry, Lecture 12</span>
+                        </div>
+                        <div class="chat-body" style="padding:14px 16px; min-height:0; gap:10px;">
+                            <div class="chat-user rv rv-y" style="--rs:.12; --rd:.06; --ry:14px; padding:9px 15px;">Explain SN2 reactions like I'm five</div>
+                            <div class="think-dots rv-window" style="--rs:.22; --rd:.04; --os:.34; --od:.04;">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="chat-answer rv rv-y" style="--rs:.36; --rd:.07; --ry:14px; max-width:90%; padding:11px 14px;">
+                                <div class="answer-label">From your lecture · 24:10</div>
+                                <p>Think of a game of tag: the new kid grabs your hand at the exact moment the old kid lets go, one single motion. That's SN2. And if the "hand" is surrounded by a crowd (bulky groups), the tag gets much harder, that's why Prof. Kim kept saying steric hindrance slows it down.</p>
+                            </div>
+                            <div class="chat-user rv rv-y" style="--rs:.5; --rd:.06; --ry:14px;">What should I review before the exam?</div>
+                            <div class="chat-answer chat-answer--orange rv rv-y" style="--rs:.62; --rd:.07; --ry:14px; max-width:90%; padding:11px 14px;">
+                                <div class="answer-label answer-label--orange">Exam prep · from 3 lectures</div>
+                                <div class="bullet-col" style="font-size:0.9rem; color:#334155; line-height:1.55;">
+                                    <div class="bullet-row star-row" style="font-size:0.9rem;"><span class="bullet">★</span> Energy diagrams for SN1 vs SN2, "this will be on the test" (Lecture 12)</div>
+                                    <div class="bullet-row star-row" style="font-size:0.9rem;"><span class="bullet">★</span> Predicting products from substrate structure (Lecture 12)</div>
+                                    <div class="bullet-row star-row" style="font-size:0.9rem;"><span class="bullet">★</span> Carbocation stability rankings (Lecture 10)</div>
+                                </div>
+                            </div>
+                            <div class="quick-chips rv rv-y" style="--rs:.76; --rd:.07; --ry:12px;">
+                                <span class="quick-chip">Explain it again, simpler</span>
+                                <span class="quick-chip">What did I miss last week?</span>
+                                <span class="quick-chip quick-chip--soon">Quiz me on this lecture <span class="soon-badge">Soon</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">04 · Ask</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">A study buddy who never missed class.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">Didn't get a concept? Ask Noto to explain it your way, using exactly what your professor said, with the timestamp to prove it. Then ask what to review, and it pulls exam hints from every lecture in the class.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 5 — Quizzes (coming soon) -->
+    <section class="scene scene--short scene--gradient" data-scene id="coming">
+        <div class="scene-sticky scene-sticky--center">
+            <div class="scene-center" style="max-width:880px;">
+                <div class="scene-kicker scene-kicker--light rv" style="--rs:0; --rd:.08;">05 · And then, quizzes</div>
+                <h2 class="scene-title scene-title--light rv rv-y" style="--rs:.04; --rd:.1;">Your lectures will quiz you back.</h2>
+                <p class="scene-text scene-text--light rv rv-y" style="--rs:.1; --rd:.1;">Coming soon to School Mode: quizzes generated from your own lecture notes, so you study what was actually taught, not a generic textbook.</p>
+                <div class="quiz-card rv rv-y" style="--rs:.2; --rd:.1;">
+                    <div class="quiz-head">
+                        <span class="quiz-label">Quiz · Organic Chemistry</span>
+                        <span class="quiz-progress">Question 3 of 8</span>
+                    </div>
+                    <div class="quiz-question">Which factor slows down an SN2 reaction?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option">A · A strong nucleophile</div>
+                        <div class="quiz-option--answer">
+                            <span class="opt-border"></span>
+                            <span class="opt-border-correct"></span>
+                            <span class="opt-text">B · Steric hindrance around the carbon
+                                <span class="opt-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M13.5 4L6 11.5L2.5 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            </span>
+                        </div>
+                        <div class="quiz-option">C · A polar aprotic solvent</div>
+                    </div>
+                    <div class="quiz-feedback">Correct, covered at 24:10 in Lecture 12.</div>
+                </div>
+                <div class="glass-chips">
+                    <span class="glass-chip rv rv-y" style="--rs:.62; --rd:.08; --ry:14px;">Quizzes from your notes</span>
+                    <span class="glass-chip rv rv-y" style="--rs:.7; --rd:.08; --ry:14px;">Flashcards from key concepts</span>
+                    <span class="glass-chip rv rv-y" style="--rs:.78; --rd:.08; --ry:14px;">Assignments, tracked per class</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section cta-section--light" id="download">
+        <div class="container">
+            <img src="logo.png" alt="NotoNote" class="cta-logo">
+            <h2>School Mode is next up.</h2>
+            <p class="cta-sub">Get NotoNote today, School Mode arrives as a free update, right in your sidebar.</p>
+
+            <div class="cta-buttons">
+                <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="btn btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
+                        <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
+                    </svg>
+                    Download for Mac
+                </a>
+                <a href="index.html#story" class="btn btn-secondary btn-large">See how NotoNote works</a>
+            </div>
+
+            <div class="cta-note">Free to use · No credit card needed</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="NotoNote">
+                        <span>NotoNote</span>
+                    </div>
+                    <p>Never Miss What Matters</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="#tour">School Mode</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="mailto:hello@fluidmind.ai">hello@fluidmind.ai</a>
+                    <a href="https://t.me/notonote_official" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://discord.com/invite/FXgN52acgG" target="_blank" rel="noopener">Discord</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year">2026</span> NotoNote. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

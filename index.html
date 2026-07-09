@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NotoNote — Your Clarity Companion</title>
-    <meta name="description" content="Turn conversations into clarity. NotoNote captures what's said and transforms it into organized notes, clear answers, and real understanding.">
+    <meta name="description" content="Turn conversations into clarity. NotoNote captures what's said and transforms it into organized notes, clear answers, and actionable items.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -15,441 +15,557 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://notonote.ai/">
     <meta property="og:title" content="NotoNote — Your Clarity Companion">
-    <meta property="og:description" content="Turn conversations into clarity. NotoNote captures what's said and transforms it into organized notes, clear answers, and real understanding. Free to use, 100% private.">
+    <meta property="og:description" content="Turn conversations into clarity. NotoNote captures what's said and transforms it into organized notes, clear answers, and actionable items. Free to use.">
     <meta property="og:image" content="https://notonote.ai/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NotoNote — Your Clarity Companion">
-    <meta name="twitter:description" content="Turn conversations into clarity. Free to use, 100% private.">
+    <meta name="twitter:description" content="Turn conversations into clarity. Free to use.">
     <meta name="twitter:image" content="https://notonote.ai/og-image.png">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="callout-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-left">
-                <a href="#" class="logo">
-                    <img src="logo.png" alt="NotoNote" class="logo-img">
-                    <span class="logo-text">NotoNote</span>
-                </a>
+    <div class="site-top">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <a href="#top" class="logo">
+                        <img src="logo.png" alt="NotoNote" class="logo-img">
+                        <span class="logo-text">NotoNote</span>
+                    </a>
+                </div>
+
+                <div class="nav-center">
+                    <a href="#features">Features</a>
+                    <a href="school-mode.html">School Mode</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="mailto:hello@fluidmind.ai">Contact Us</a>
+                    <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="mobile-download-btn">Download Free</a>
+                </div>
+
+                <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <div class="nav-right">
+                    <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="download-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
+                            <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
+                        </svg>
+                        Download Free
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="scroll-progress" id="scroll-fill"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-cinematic" id="top">
+        <div class="hero-core">
+            <div class="hero-logo">
+                <img src="logo.png" alt="NotoNote">
             </div>
 
-            <div class="nav-center">
-                <a href="#features">Features</a>
-                <a href="roadmap.html">Roadmap</a>
-                <a href="#feedback">Contact Us</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="#download" class="mobile-download-btn mobile-download-disabled">Desktop App Only</a>
+            <h1 class="hero-title"><span id="typewriter" data-messages='["Turn conversations into clarity","Make what you hear work for you","Ask me anything about it","Let Noto listen. You stay present","Everything said, easy to find"]'></span><span class="cursor">|</span></h1>
+
+            <div class="hero-callout">
+                <p class="hero-callout-privacy">Your most powerful tool. Private when it matters.</p>
+                <p class="hero-callout-free">Free to use. No credit card needed.</p>
             </div>
 
-            <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-
-            <div class="nav-right">
-                <a href="#download" class="download-btn">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="hero-buttons">
+                <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
                         <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
                     </svg>
-                    Download Free
+                    Download for Mac
                 </a>
+                <span class="btn btn-secondary btn-disabled">
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
+                        <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
+                    </svg>
+                    Windows: Coming Soon
+                </span>
+            </div>
+
+            <div class="hero-note">Works in any language · Simple and fast</div>
+        </div>
+
+        <a href="#story" class="scroll-cue">
+            <span class="cue-label">Scroll to watch Noto work</span>
+            <svg class="cue-chevron" width="22" height="22" viewBox="0 0 20 20" fill="none">
+                <path d="M4 7l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Features statement -->
+    <section class="statement" id="features">
+        <p>NotoNote captures what's said and transforms it into <strong>organized notes, clear answers, and actionable items</strong>. Your friendly sidekick for meetings, lectures, and everything in between.</p>
+        <div class="keep-cue" id="features-cue">
+            <span class="cue-label">Keep scrolling</span>
+            <svg class="cue-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 7l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Scene 1 — Capture -->
+    <section class="scene" data-scene id="story" style="background:linear-gradient(180deg,#FFFFFF 0%,#F0F9FF 100%);">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-right">
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">01 · Capture</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">One click. Noto starts listening.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">No meeting bots. No awkward "recording has started" announcements. Noto works silently in the background while you stay present in the conversation.</p>
+                    <div class="scene-chip rv rv-y" style="--rs:.62; --rd:.1; --ry:16px;">
+                        <span class="chip-dot"></span>
+                        Every word captured, even if you zone out for a second
+                    </div>
+                </div>
+
+                <div class="scene-mock rv rv-y" style="--rs:.04; --rd:.1; --ry:50px; position:relative;">
+                    <div class="mock-card">
+                        <div class="mock-titlebar">
+                            <div class="traffic-dots"><span></span><span></span><span></span></div>
+                            <span class="titlebar-name">NotoNote</span>
+                        </div>
+                        <div class="capture-window">
+                            <div class="capture-sidebar">
+                                <div class="sidebar-brand">
+                                    <img src="logo.png" alt="">
+                                    <span>NotoNote</span>
+                                </div>
+                                <div class="sidebar-search">Search meeting content…</div>
+                                <div class="sidebar-section">Home</div>
+                                <div class="sidebar-section" style="margin-bottom:6px;">Meeting Notes</div>
+                                <div class="sidebar-list">
+                                    <div class="sidebar-item sidebar-item--active">Product Sync, Q3 Redesign</div>
+                                    <div class="sidebar-item">Client Review, Friday</div>
+                                    <div class="sidebar-item">Lecture, Cognitive Science</div>
+                                </div>
+                                <div class="record-flip">
+                                    <div class="record-start"><span class="rec-dot"></span>Start Recording</div>
+                                    <div class="record-live"><span class="rec-square"></span>Recording in progress…</div>
+                                </div>
+                            </div>
+                            <div class="capture-main">
+                                <div class="rec-status rv rv-y" style="--rs:.42; --rd:.08; --ry:12px;">
+                                    <span class="pulse-dot"></span>
+                                    Recording · <span id="rec-timer">00:00</span>
+                                </div>
+                                <div class="waveform rv" style="--rs:.5; --rd:.1;">
+                                    <span class="wave-bar" style="height:22px; background:#4DD0FF; animation-duration:0.9s; animation-delay:-0.1s;"></span>
+                                    <span class="wave-bar" style="height:38px; background:#26C6FF; animation-duration:0.7s; animation-delay:-0.3s;"></span>
+                                    <span class="wave-bar" style="height:54px; background:#1E88E5; animation-duration:0.8s; animation-delay:-0.5s;"></span>
+                                    <span class="wave-bar" style="height:30px; background:#26C6FF; animation-duration:0.6s; animation-delay:-0.2s;"></span>
+                                    <span class="wave-bar" style="height:46px; background:#1E88E5; animation-duration:0.75s; animation-delay:-0.6s;"></span>
+                                    <span class="wave-bar" style="height:60px; background:#0D47A1; animation-duration:0.85s; animation-delay:-0.4s;"></span>
+                                    <span class="wave-bar" style="height:40px; background:#1E88E5; animation-duration:0.65s; animation-delay:-0.15s;"></span>
+                                    <span class="wave-bar" style="height:52px; background:#26C6FF; animation-duration:0.9s; animation-delay:-0.55s;"></span>
+                                    <span class="wave-bar" style="height:28px; background:#4DD0FF; animation-duration:0.7s; animation-delay:-0.35s;"></span>
+                                    <span class="wave-bar" style="height:44px; background:#1E88E5; animation-duration:0.8s; animation-delay:-0.25s;"></span>
+                                    <span class="wave-bar" style="height:34px; background:#26C6FF; animation-duration:0.6s; animation-delay:-0.45s;"></span>
+                                    <span class="wave-bar" style="height:20px; background:#4DD0FF; animation-duration:0.75s; animation-delay:-0.05s;"></span>
+                                </div>
+                                <div class="capture-note rv" style="--rs:.62; --rd:.1;">Listening… you can minimize the window and forget about it.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cursor-dot cursor-dot--capture"></div>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-logo-big">
-                    <img src="logo.png" alt="NotoNote">
+    <!-- Scene 2 — Transcribe -->
+    <section class="scene" data-scene id="scene-transcribe" style="background:#FFFFFF;">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-left">
+                <div class="scene-mock rv rv-y" style="--rs:.02; --rd:.08; --ry:50px; position:relative;">
+                    <div class="mock-card">
+                        <div class="mock-tabs">
+                            <span class="mock-tab">Copy</span>
+                            <span class="mock-tab">Devices</span>
+                            <span class="mock-tab mock-tab--active">Language</span>
+                        </div>
+                        <div class="transcript-body">
+                            <div class="transcript-line rv" style="--rs:.1; --rd:.04;">
+                                <span class="ts">[00:03]</span>
+                                <div class="line-body">
+                                    <div class="speaker speaker--sarah">Sarah</div>
+                                    <div class="line-text wipe" style="--ws:.1; --wd:.13;">I think we should prioritize the mobile experience for the Q3 redesign, that's where most of our new users are.</div>
+                                </div>
+                            </div>
+                            <div class="transcript-line rv" style="--rs:.28; --rd:.04;">
+                                <span class="ts">[00:11]</span>
+                                <div class="line-body">
+                                    <div class="speaker speaker--morgan">Morgan</div>
+                                    <div class="line-text wipe" style="--ws:.28; --wd:.11;">Agreed, especially for our international users. The activation numbers there are twice as high.</div>
+                                </div>
+                            </div>
+                            <div class="transcript-line rv" style="--rs:.44; --rd:.04;">
+                                <span class="ts">[00:19]</span>
+                                <div class="line-body">
+                                    <div class="speaker-row">
+                                        <span class="speaker speaker--sarah">Sarah</span>
+                                        <span class="lang-tag">ES</span>
+                                    </div>
+                                    <div class="line-text wipe" style="--ws:.44; --wd:.11;">Perfecto. Entonces empezamos con el rediseño la próxima semana, ¿de acuerdo?</div>
+                                </div>
+                            </div>
+                            <div class="transcript-line rv" style="--rs:.6; --rd:.04;">
+                                <span class="ts">[00:26]</span>
+                                <div class="line-body">
+                                    <div class="speaker speaker--morgan">Morgan</div>
+                                    <div class="line-text wipe" style="--ws:.6; --wd:.11;">Deal. I'll draft the timeline and share it before Friday's client review.</div>
+                                </div>
+                            </div>
+                            <div class="listening-row rv" style="--rs:.72; --rd:.06;">
+                                <span class="pulse-dot"></span>
+                                Listening…
+                            </div>
+                        </div>
+                    </div>
+                    <div class="float-pill float-pill--tr rv rv-y" style="--rs:.78; --rd:.08; --ry:12px;">Speaker identification</div>
+                    <div class="float-pill float-pill--bl rv rv-y" style="--rs:.84; --rd:.08; --ry:12px;">Any language, even mixed</div>
                 </div>
 
-                <h1 class="hero-title">
-                    <span id="typewriter"></span><span class="cursor">|</span>
-                </h1>
-
-                <p class="hero-subtitle">
-                    NotoNote captures what's said and transforms it into organized notes, clear answers,
-                    and real understanding. Your friendly sidekick for meetings, lectures, and everything in between.
-                </p>
-
-                <div class="hero-callout">
-                    <p class="hero-callout-privacy">Your most powerful tool. Your most private one, too.</p>
-                    <p class="hero-callout-free">Free to use. No credit card needed.</p>
-                </div>
-
-                <div class="hero-buttons">
-                    <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="btn btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
-                            <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
-                        </svg>
-                        Download for Mac
-                    </a>
-                    <button class="btn btn-secondary btn-disabled" disabled>
-                        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
-                            <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
-                        </svg>
-                        Windows — Coming Soon
-                    </button>
-                </div>
-
-                <div class="hero-note">
-                    Works in any language · Simple and fast
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">02 · Transcribe</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">Every word, live. Every speaker, named.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">Watch the transcript appear as the conversation happens, with timestamps and speaker identification. English, Spanish, Mandarin, or all three in one meeting. Noto keeps up.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="hero-visual">
-                <div class="demo-chat-container">
-                    <div class="demo-chat-card">
-                        <div class="chat-time">2:34 PM</div>
-                        <div class="chat-question">What did Sarah say about the deadline?</div>
-                        <div class="chat-answer">
-                            <div class="answer-badge">Answer · 02:15</div>
-                            <p>Sarah mentioned the deadline is flexible but ideally wants everything finalized by next Friday to align with the client review.</p>
-                        </div>
-                    </div>
-
-                    <div class="demo-transcript-card">
-                        <div class="transcript-header">Transcript</div>
-                        <div class="transcript-item">
-                            <div class="transcript-speaker">Sarah</div>
-                            <div class="transcript-text">I think we should prioritize the mobile experience...</div>
-                        </div>
-                        <div class="transcript-item">
-                            <div class="transcript-speaker">Morgan</div>
-                            <div class="transcript-text">Agreed, especially for our international users</div>
-                        </div>
-                    </div>
-
-                    <div class="demo-template-card">
-                        <div class="template-header">Custom template</div>
+    <!-- Scene 3 — Summarize -->
+    <section class="scene" data-scene id="scene-summarize" style="background:#F8FAFC;">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-right">
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">03 · Summarize</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">Your structure, automated.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">Design templates that match how you think, key decisions, next steps, open questions. One click on Generate Note, and Noto fills them in from the conversation.</p>
+                    <div class="template-chip-card rv rv-y" style="--rs:.12; --rd:.08; --ry:24px;">
+                        <div class="template-label">Custom template</div>
                         <div class="template-list">
-                            <div class="template-list-item">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="template-item">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 Key decisions
                             </div>
-                            <div class="template-list-item">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="template-item">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 Next steps
                             </div>
-                            <div class="template-list-item">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="template-item">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 Open questions
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Fun Callout Bubble -->
-    <section class="fun-callout">
-        <div class="container">
-            <div class="callout-bubble">
-                <div class="bubble-character">
-                    <img src="logo.png" alt="NotoNote" class="bubble-logo">
-                </div>
-                <div class="bubble-content">
-                    <div class="bubble-text" id="bubble-message">
-                        <strong>No annoying meeting prompts.</strong> I work silently in the background while you focus on what matters.
+                <div class="scene-mock rv rv-y" style="--rs:.04; --rd:.1; --ry:50px;">
+                    <div class="mock-card">
+                        <div class="mock-header">
+                            <span class="toolbar-btn toolbar-btn--primary">
+                                <span class="ring-pulse rv-window" style="--rs:.16; --rd:.05; --os:.34; --od:.05;"></span>
+                                ✦ Generate Note
+                            </span>
+                            <span class="toolbar-btn">Template</span>
+                            <span class="toolbar-btn">Save</span>
+                            <span class="toolbar-btn">Copy</span>
+                        </div>
+                        <div class="note-body">
+                            <div class="note-section rv" style="--rs:.34; --rd:.05;">
+                                <span class="inline-heading">Summary</span>
+                                <span class="inline-text"> The team aligned on making the Q3 redesign mobile-first, driven by strong international activation. Work begins next week, with a timeline due before Friday's client review.</span>
+                            </div>
+                            <div class="note-section rv" style="--rs:.46; --rd:.05;">
+                                <h5>Key Decisions</h5>
+                                <div class="bullet-row"><span class="bullet">•</span> Q3 redesign will be mobile-first, starting next week.</div>
+                            </div>
+                            <div class="note-section rv" style="--rs:.58; --rd:.05;">
+                                <h5>Next Steps</h5>
+                                <div class="bullet-col">
+                                    <div class="bullet-row"><span class="bullet">•</span> Morgan drafts the timeline before Friday's client review.</div>
+                                    <div class="bullet-row"><span class="bullet">•</span> Sarah briefs the design team on mobile priorities.</div>
+                                </div>
+                            </div>
+                            <div class="note-section rv" style="--rs:.7; --rd:.05;">
+                                <h5>Open Questions</h5>
+                                <div class="bullet-row"><span class="bullet">•</span> Do we need Spanish localization ready at launch?</div>
+                            </div>
+                            <div class="done-banner rv rv-y" style="--rs:.84; --rd:.08; --ry:10px;">Summary completed</div>
+                        </div>
                     </div>
                 </div>
-                <div class="bubble-tail"></div>
             </div>
         </div>
     </section>
 
-    <!-- What Makes It Different -->
-    <section class="different" id="features">
+    <!-- Scene 4 — Ask -->
+    <section class="scene" data-scene id="scene-ask" style="background:linear-gradient(180deg,#F8FAFC 0%,#F0F9FF 100%);">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-left">
+                <div class="scene-mock chat-mock-wrap rv rv-y" style="--rs:.02; --rd:.08; --ry:50px;">
+                    <div class="mock-card">
+                        <div class="chat-header">
+                            <img src="logo.png" alt="">
+                            <span class="chat-title">Ask Noto</span>
+                            <span class="chat-context">Product Sync, Q3 Redesign</span>
+                        </div>
+                        <div class="chat-body">
+                            <div class="chat-user rv rv-y" style="--rs:.12; --rd:.06; --ry:14px;">What did Sarah say about the deadline?</div>
+                            <div class="think-dots rv-window" style="--rs:.24; --rd:.04; --os:.38; --od:.04;">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="chat-answer rv rv-y" style="--rs:.4; --rd:.07; --ry:14px;">
+                                <div class="answer-label">Answer · 02:15</div>
+                                <p>Sarah mentioned the deadline is flexible but ideally wants everything finalized by next Friday to align with the client review.</p>
+                                <div class="jump-pill">Jump to transcript · 02:15 ↗</div>
+                            </div>
+                            <div class="chat-user rv rv-y" style="--rs:.54; --rd:.06; --ry:14px;">Now turn that into a follow-up email to the client.</div>
+                            <div class="email-card rv rv-y" style="--rs:.66; --rd:.08; --ry:14px;">
+                                <div class="email-label">Email draft</div>
+                                <div class="email-meta">To: <span>alex@client.com</span></div>
+                                <div class="email-meta email-meta--subject">Subject: <span>Q3 redesign, next steps</span></div>
+                                <p>Hi Alex, quick recap from today: we're going mobile-first for the Q3 redesign, starting next week. You'll have the full timeline before Friday's review.</p>
+                            </div>
+                            <div class="quick-chips rv rv-y" style="--rs:.8; --rd:.07; --ry:12px;">
+                                <span class="quick-chip">Copy email</span>
+                                <span class="quick-chip">Make it shorter</span>
+                                <span class="quick-chip">More formal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">04 · Ask</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">Chat with your meetings.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">Ask anything, like you're talking to someone who was there, answers come with sources you can jump to. Then put Noto to work: draft the follow-up email, prep talking points, translate the recap. All from the conversation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 5 — Follow through -->
+    <section class="scene" data-scene id="scene-actions" style="background:linear-gradient(180deg,#F0F9FF 0%,#FFFFFF 25%);">
+        <div class="scene-sticky">
+            <div class="scene-grid scene-grid--mock-right">
+                <div class="scene-copy">
+                    <div class="scene-kicker rv" style="--rs:0; --rd:.06;">05 · Follow through</div>
+                    <h2 class="scene-title rv rv-y" style="--rs:.02; --rd:.08;">Meetings end. Noto follows through.</h2>
+                    <p class="scene-text rv rv-y" style="--rs:.06; --rd:.08;">After every meeting, Noto pulls out the action items, owners, due dates, priority, and tracks them in one place across all your meetings. Each morning, it hands you a daily briefing of what's outstanding and where to start.</p>
+                    <div class="scene-chip rv rv-y" style="--rs:.3; --rd:.1; --ry:16px;">
+                        <span class="chip-dot"></span>
+                        Extracted automatically after every meeting
+                    </div>
+                </div>
+
+                <div class="scene-mock actions-wrap rv rv-y" style="--rs:.04; --rd:.1; --ry:50px;">
+                    <div class="mock-card actions-card">
+                        <div class="mock-header actions-header">
+                            <span class="actions-title">Action Items</span>
+                            <span class="count-badge">4</span>
+                            <span class="view-all">View all</span>
+                        </div>
+                        <div class="actions-filters">
+                            <span class="filter-pill filter-pill--active">Open</span>
+                            <span class="filter-pill">High</span>
+                            <span class="filter-pill">All</span>
+                        </div>
+                        <div class="action-item rv rv-y" style="--rs:.14; --rd:.06; --ry:12px;">
+                            <span class="priority-bar" style="background:#EF4444;"></span>
+                            <span class="action-checkbox"></span>
+                            <div class="action-body">
+                                <div class="action-text">Send revised proposal to Alex</div>
+                                <div class="action-meta">
+                                    <span class="action-source">Client Review, Friday</span>
+                                    <span class="due-tag due-tag--overdue">Overdue</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="action-item rv rv-y" style="--rs:.22; --rd:.06; --ry:12px;">
+                            <span class="priority-bar" style="background:#EF4444;"></span>
+                            <span class="check-swap">
+                                <span class="check-empty"></span>
+                                <span class="check-done"><svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M13.5 4L6 11.5L2.5 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            </span>
+                            <div class="action-body action-body--dimming">
+                                <div class="action-text">Draft Q3 timeline for client review</div>
+                                <div class="action-meta">
+                                    <span class="action-source">Product Sync, Q3 Redesign</span>
+                                    <span class="due-tag due-tag--today">Due today</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="action-item rv rv-y" style="--rs:.3; --rd:.06; --ry:12px;">
+                            <span class="priority-bar" style="background:#F59E0B;"></span>
+                            <span class="action-checkbox"></span>
+                            <div class="action-body">
+                                <div class="action-text">Book user interviews for the mobile beta</div>
+                                <div class="action-meta">
+                                    <span class="action-source">Product Sync, Q3 Redesign</span>
+                                    <span class="due-tag due-tag--fri">Due Fri</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="action-item rv rv-y" style="--rs:.38; --rd:.06; --ry:12px;">
+                            <span class="priority-bar" style="background:#38BDF8;"></span>
+                            <span class="action-checkbox"></span>
+                            <div class="action-body">
+                                <div class="action-text">Share lecture notes with study group</div>
+                                <div class="action-meta">
+                                    <span class="action-source">Lecture, Cognitive Science</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="briefing-card rv rv-y" style="--rs:.56; --rd:.08; --ry:40px;">
+                        <div class="briefing-head">
+                            <img src="logo.png" alt="">
+                            <span class="briefing-title">Daily Briefing</span>
+                            <span class="briefing-time">8:02 AM</span>
+                        </div>
+                        <p>Good morning! You have 1 overdue item and 2 due today. Start with the client proposal, it's blocking Friday's review.</p>
+                        <div class="briefing-grid">
+                            <div class="briefing-bucket bucket--now rv" style="--rs:.68; --rd:.06;">
+                                <div class="bucket-label">Do now</div>
+                                <div class="bucket-text">Send revised proposal</div>
+                            </div>
+                            <div class="briefing-bucket bucket--schedule rv" style="--rs:.74; --rd:.06;">
+                                <div class="bucket-label">Schedule</div>
+                                <div class="bucket-text">Book user interviews</div>
+                            </div>
+                            <div class="briefing-bucket bucket--delegate rv" style="--rs:.8; --rd:.06;">
+                                <div class="bucket-label">Delegate</div>
+                                <div class="bucket-text">Timeline review → Morgan</div>
+                            </div>
+                            <div class="briefing-bucket bucket--defer rv" style="--rs:.86; --rd:.06;">
+                                <div class="bucket-label">Defer</div>
+                                <div class="bucket-text">Study group notes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 6 — Your call (privacy) -->
+    <section class="scene scene--short scene--gradient" data-scene id="scene-private">
+        <div class="scene-sticky scene-sticky--center">
+            <div class="scene-center" style="max-width:820px;">
+                <div class="scene-kicker scene-kicker--light rv" style="--rs:0; --rd:.08;">06 · Your call</div>
+                <div class="privacy-card rv rv-y" style="--rs:.06; --rd:.1;">
+                    <div class="privacy-row">
+                        <div class="privacy-info">
+                            <div class="privacy-name">Client Review, Friday</div>
+                            <div class="privacy-status">
+                                <div class="status-synced">Synced across your devices · Mac · iPhone · Web</div>
+                                <div class="status-private">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M12 2L4 6v6c0 5.52 3.42 10.68 8 12 4.58-1.32 8-6.48 8-12V6l-8-4z" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    Private, never leaves this Mac
+                                </div>
+                            </div>
+                        </div>
+                        <div class="privacy-toggle">
+                            <span class="toggle-label">Private</span>
+                            <span class="toggle-track">
+                                <span class="toggle-fill"></span>
+                                <span class="toggle-knob"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="scene-title scene-title--light rv rv-y" style="--rs:.14; --rd:.1;">Sync everywhere. Or keep it on your Mac. Your call.</h2>
+                <p class="scene-text scene-text--light rv rv-y" style="--rs:.24; --rd:.1;">Your meetings sync across devices by default. For sensitive conversations, flip one switch, private meetings are transcribed locally and never leave your device.</p>
+                <div class="glass-chips">
+                    <span class="glass-chip rv rv-y" style="--rs:.42; --rd:.08; --ry:14px;">Cloud sync by default</span>
+                    <span class="glass-chip rv rv-y" style="--rs:.5; --rd:.08; --ry:14px;">One switch per meeting</span>
+                    <span class="glass-chip rv rv-y" style="--rs:.58; --rd:.08; --ry:14px;">Private = fully local</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recap -->
+    <section class="recap" id="how">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What makes NotoNote different</h2>
-                <p class="section-subtitle">Not just transcription. A clarity companion that actually understands.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="3" fill="currentColor"/>
-                            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" stroke-dasharray="2 4"/>
-                        </svg>
-                    </div>
-                    <h3>Never miss a moment</h3>
-                    <p>Every word captured, even if you zone out for a second. NotoNote records everything so you can focus on the conversation, not taking notes.</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>AI assistant for your meetings</h3>
-                    <p>Chat with your meetings like you're talking to someone who was there. Ask anything, get instant answers with sources, create follow-ups, draft emails—all from the conversation.</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
-                            <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
-                            <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
-                            <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>Your structure, automated</h3>
-                    <p>Design custom templates that match how you think. NotoNote fills them automatically, tying everything together in a way that makes sense to you.</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 2v8M12 14v8M2 12h8M14 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>Truly multilingual</h3>
-                    <p>English, Spanish, Mandarin, mixed conversations—all supported with the same quality and understanding.</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L4 6v6c0 5.52 3.42 10.68 8 12 4.58-1.32 8-6.48 8-12V6l-8-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Private by design</h3>
-                    <p>Your conversations stay on your device. Nothing is sent to external servers unless you choose to. You're always in control.</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Simple and fast</h3>
-                    <p>One-click record. Instant transcript. Clean notes. No complexity, no bloat—just clarity when you need it.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">How it works</h2>
-                <p class="section-subtitle">Four simple steps to clarity</p>
+                <h2 class="section-title">That's the whole story</h2>
+                <p class="section-subtitle">Five simple steps to clarity, every single time</p>
             </div>
 
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <h3>Capture</h3>
-                    <p>Record everything in one click. Every word, every moment—nothing gets lost.</p>
+                    <p>Record everything in one click. Every word, every moment, nothing gets lost.</p>
                 </div>
-
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h3>Transcribe</h3>
                     <p>Automatic transcription with speaker identification and multilingual support.</p>
                 </div>
-
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <h3>Summarize</h3>
-                    <p>Get clean, structured notes instantly—using your custom templates or ours.</p>
+                    <p>Get clean, structured notes instantly, using your custom templates or ours.</p>
                 </div>
-
                 <div class="step-card">
                     <div class="step-number">4</div>
                     <h3>Ask anything</h3>
-                    <p>Chat with your AI assistant about the meeting. Get answers, create follow-ups, draft emails—anything you need.</p>
+                    <p>Chat with your AI assistant about the meeting. Answers, follow-ups, emails, anything.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Follow through</h3>
+                    <p>Action items tracked across every meeting, with a daily briefing of what's outstanding.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Roadmap Section - Coming Soon -->
-    <section class="roadmap" id="roadmap">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What's coming next</h2>
-                <p class="section-subtitle">We're building features that make NotoNote even better. Here's what's on the way.</p>
-            </div>
-
-            <div class="coming-soon-grid">
-                <div class="coming-soon-card">
-                    <div class="coming-soon-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                            <rect x="8" y="14" width="22" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <rect x="14" y="8" width="26" height="32" rx="3" stroke="currentColor" stroke-width="2" fill="var(--color-sky-50)"/>
-                            <line x1="18" y1="16" x2="36" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="18" y1="22" x2="32" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="18" y1="28" x2="34" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>Mobile App</h3>
-                    <p>Record and review on the go with native iOS and Android apps</p>
-                    <div class="coming-badge">Coming Soon</div>
-                </div>
-
-                <div class="coming-soon-card featured-card">
-                    <div class="coming-soon-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                            <rect x="10" y="14" width="28" height="22" rx="2" stroke="currentColor" stroke-width="2" fill="var(--color-sky-50)"/>
-                            <path d="M16 20h16M16 26h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="32" cy="10" r="6" fill="var(--brand-orange)" stroke="var(--color-white)" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>School Mode</h3>
-                    <p>A complete learning-focused experience with concept extraction and study tools built for students and educators</p>
-                    <div class="coming-badge featured-badge">Next Up</div>
-                </div>
-
-                <div class="coming-soon-card">
-                    <div class="coming-soon-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                            <rect x="12" y="12" width="24" height="24" rx="3" stroke="currentColor" stroke-width="2" fill="var(--color-sky-50)"/>
-                            <path d="M20 20l8 4-8 4v-8z" fill="currentColor"/>
-                            <circle cx="34" cy="14" r="4" fill="var(--brand-cyan)" stroke="var(--color-white)" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>Recipes</h3>
-                    <p>Create, use, and share custom AI assistant actions for your workflow</p>
-                    <div class="coming-badge">Coming Soon</div>
-                </div>
-            </div>
-
-            <div class="roadmap-footer">
-                <p>Want to see what else we're working on?</p>
-                <a href="roadmap.html" class="roadmap-link">
-                    View full roadmap
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community & Contact Section -->
-    <section class="community-section" id="feedback">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get in touch</h2>
-                <p class="section-subtitle">Have a question, feature request, or just want to say hi? We'd love to hear from you.</p>
-            </div>
-
-            <div class="community-grid">
-                <a href="mailto:hello@fluidmind.ai" class="community-card community-email">
-                    <div class="community-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-                            <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Email us</h3>
-                    <p class="community-link-text">hello@fluidmind.ai</p>
-                </a>
-
-                <a href="https://t.me/notonote_official" target="_blank" rel="noopener" class="community-card community-telegram">
-                    <img src="qr-telegram.png" alt="Telegram QR Code" class="community-qr">
-                    <h3>Telegram</h3>
-                    <p class="community-link-text">Join our Telegram</p>
-                </a>
-
-                <a href="https://discord.com/invite/FXgN52acgG" target="_blank" rel="noopener" class="community-card community-discord">
-                    <img src="qr-discord.png" alt="Discord QR Code" class="community-qr">
-                    <h3>Discord</h3>
-                    <p class="community-link-text">Join our Discord</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who Uses It -->
-    <section class="who-uses">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Built for everyone who talks and listens</h2>
-                <p class="section-subtitle">From professionals to students to creators—clarity matters to all of us</p>
-            </div>
-
-            <div class="use-cases-grid">
-                <div class="use-case">
-                    <h4>Professionals</h4>
-                    <p>Founders, lawyers, consultants, PMs, and researchers who need clarity after complex conversations</p>
-                </div>
-
-                <div class="use-case">
-                    <h4>Students & Learners</h4>
-                    <p>Anyone attending lectures, seminars, or workshops who wants to understand, not just record</p>
-                </div>
-
-                <div class="use-case">
-                    <h4>Creators & Thinkers</h4>
-                    <p>Podcasters, writers, educators capturing and organizing their spoken ideas</p>
-                </div>
-
-                <div class="use-case">
-                    <h4>Multilingual Users</h4>
-                    <p>People who work across languages or in bilingual environments—fully supported</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section" id="download">
         <div class="container">
-            <div class="cta-content">
-                <img src="logo.png" alt="NotoNote" class="cta-logo">
-                <h2>Ready to start?</h2>
-                <p>Free to use, 100% private. Your conversations never leave your device.</p>
+            <img src="logo.png" alt="NotoNote" class="cta-logo">
+            <h2>Ready to start?</h2>
+            <p class="cta-sub">Free to use. Syncs across your devices, and private meetings never leave your Mac.</p>
 
-                <div class="cta-buttons">
-                    <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="btn btn-primary btn-large">
-                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
-                            <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
-                        </svg>
-                        Download for Mac
-                    </a>
-                    <button class="btn btn-secondary btn-large btn-disabled" disabled>
-                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
-                            <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
-                        </svg>
-                        Windows — Coming Soon
-                    </button>
-                </div>
-
-                <div class="cta-note">No credit card needed · Upgrade anytime for more</div>
+            <div class="cta-buttons">
+                <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="btn btn-white btn-large">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
+                        <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
+                    </svg>
+                    Download for Mac
+                </a>
+                <span class="btn btn-outline-white btn-large btn-disabled">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 11L4 7h2.5V2h3v5H12L8 11z" fill="currentColor"/>
+                        <path d="M14 13v1H2v-1h12z" fill="currentColor"/>
+                    </svg>
+                    Windows: Coming Soon
+                </span>
             </div>
+
+            <div class="cta-note">No credit card needed · Upgrade anytime · iOS &amp; Android apps coming soon</div>
         </div>
     </section>
 
@@ -465,26 +581,29 @@
                     <p>Never Miss What Matters</p>
                 </div>
 
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="roadmap.html">Roadmap</a>
-                        <a href="#download">Download</a>
-                        <a href="pricing.html">Pricing</a>
-                    </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="school-mode.html">School Mode</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="#download">Download</a>
+                </div>
 
-                    <div class="footer-col">
-                        <h4>Legal</h4>
-                        <a href="terms.html">Terms & Conditions</a>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="cookies.html">Cookie Policy</a>
-                    </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="mailto:hello@fluidmind.ai">hello@fluidmind.ai</a>
+                    <a href="https://t.me/notonote_official" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://discord.com/invite/FXgN52acgG" target="_blank" rel="noopener">Discord</a>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; <span id="copyright-year">2026</span> NotoNote. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
             </div>
         </div>
     </footer>

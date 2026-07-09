@@ -8,10 +8,12 @@ Official website for NotoNote - your clarity companion for turning conversations
 
 | Page | URL | Description |
 |------|-----|-------------|
-| Home | [notonote.ai](https://notonote.ai) | Main landing page |
+| Home | [notonote.ai](https://notonote.ai) | Cinematic scroll-driven landing page |
+| School Mode | [notonote.ai/school-mode.html](https://notonote.ai/school-mode.html) | School Mode feature story |
+| Pricing | [notonote.ai/pricing.html](https://notonote.ai/pricing.html) | Free · Local / Pro · Cloud / Pro+ plans |
 | Privacy Policy | [notonote.ai/privacy.html](https://notonote.ai/privacy.html) | Privacy policy |
 | Terms of Service | [notonote.ai/terms.html](https://notonote.ai/terms.html) | Terms of service |
-| Roadmap | [notonote.ai/roadmap.html](https://notonote.ai/roadmap.html) | Product roadmap |
+| Cookie Policy | [notonote.ai/cookies.html](https://notonote.ai/cookies.html) | Cookie policy |
 | Email Confirmed | [notonote.ai/email-confirmed.html](https://notonote.ai/email-confirmed.html) | Post-signup confirmation page |
 
 ## Local Development
@@ -25,6 +27,14 @@ cd noto-website
 open index.html
 ```
 
+## How the scroll scenes work
+
+Home and School Mode tell their story with scroll-pinned scenes. Each scene is a tall
+section (`.scene`, 240vh) with a sticky 100vh viewport inside. A rAF-throttled scroll
+handler in `script.js` computes a progress value `--p` (0→1) per scene; elements inside
+reveal via CSS `clamp()`/`calc()` utilities (`.rv`, `.wipe`, etc.) in `style.css`.
+Users with `prefers-reduced-motion` get every scene in its final state.
+
 ## Deployment
 
 This site is automatically deployed via GitHub Pages when changes are pushed to `main`.
@@ -32,5 +42,4 @@ This site is automatically deployed via GitHub Pages when changes are pushed to 
 ## Tech Stack
 
 - Static HTML/CSS/JS
-- Tailwind CSS (via CDN for some pages)
-- Google Fonts (DM Sans, Poppins)
+- Google Fonts (DM Sans, Poppins, Manrope)
