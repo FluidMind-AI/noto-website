@@ -1216,7 +1216,8 @@ body.school .hero-logo img {
     flex-direction: column;
 }
 
-.note-section h5 {
+.note-section h5,
+.note-section h3.ns-h {
     font-weight: 800;
     color: var(--color-gray-900);
     font-size: 0.98rem;
@@ -1946,7 +1947,8 @@ body.school .hero-logo img {
     color: var(--color-gray-500);
 }
 
-.footer-col h4 {
+.footer-col h4,
+.footer-col .footer-title {
     font-weight: 700;
     color: var(--color-white);
     margin-bottom: var(--space-md);
@@ -2293,7 +2295,8 @@ body.school .hero-logo img {
 }
 
 .lecture-body .inline-heading,
-.lecture-body .note-section h5 {
+.lecture-body .note-section h5,
+.lecture-body .note-section h3.ns-h {
     font-size: 0.95rem;
 }
 

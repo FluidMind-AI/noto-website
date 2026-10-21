@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact NotoNote — Support, Privacy Requests and Community</title>
     <meta name="description" content="Contact NotoNote: email support for help with the app, your account or billing, send a privacy or data request, or join the community on Discord and Telegram.">
-    <link rel="canonical" href="https://notonote.ai/contact">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="NotoNote">
+    <link rel="canonical" href="https://notonote.ai/contact.html">
+
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://notonote.ai/contact">
-    <meta property="og:title" content="Contact NotoNote">
-    <meta property="og:description" content="Support, privacy requests and community for NotoNote.">
+    <meta property="og:site_name" content="NotoNote">
+    <meta property="og:title" content="Contact NotoNote — Support, Privacy Requests and Community">
+    <meta property="og:description" content="Contact NotoNote: email support for help with the app, your account or billing, send a privacy or data request, or join the community on Discord and Telegram.">
+    <meta property="og:url" content="https://notonote.ai/contact.html">
     <meta property="og:image" content="https://notonote.ai/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NotoNote cloud mascot with a lightning bolt on a blue background">
+    <meta property="og:locale" content="en_US">
+
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact NotoNote — Support, Privacy Requests and Community">
+    <meta name="twitter:description" content="Contact NotoNote: email support for help with the app, your account or billing, send a privacy or data request, or join the community on Discord and Telegram.">
+    <meta name="twitter:image" content="https://notonote.ai/og-image.png">
+    <meta name="twitter:image:alt" content="NotoNote cloud mascot with a lightning bolt on a blue background">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -26,30 +39,66 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contact NotoNote",
-      "url": "https://notonote.ai/contact",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "NotoNote",
-        "legalName": "Fluid Mind Inc.",
-        "url": "https://notonote.ai",
-        "logo": "https://notonote.ai/logo.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Intershore Chambers",
-          "addressLocality": "Road Town, Tortola",
-          "addressCountry": "VG"
+      "@type": "Organization",
+      "@id": "https://notonote.ai/#organization",
+      "name": "NotoNote",
+      "legalName": "Fluid Mind Inc.",
+      "url": "https://notonote.ai/",
+      "logo": "https://notonote.ai/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Intershore Chambers",
+        "addressLocality": "Road Town, Tortola",
+        "addressCountry": "VG"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@notonote.ai"
         },
-        "contactPoint": [
-          { "@type": "ContactPoint", "contactType": "customer support", "email": "support@notonote.ai" },
-          { "@type": "ContactPoint", "contactType": "privacy", "email": "privacy@fluidmind.ai" }
-        ],
-        "sameAs": ["https://t.me/notonote_official", "https://discord.com/invite/FXgN52acgG"]
-      }
+        {
+          "@type": "ContactPoint",
+          "contactType": "privacy",
+          "email": "privacy@fluidmind.ai"
+        }
+      ],
+      "sameAs": [
+        "https://t.me/notonote_official",
+        "https://discord.com/invite/FXgN52acgG"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://notonote.ai/#website",
+      "url": "https://notonote.ai/",
+      "name": "NotoNote",
+      "publisher": {
+        "@id": "https://notonote.ai/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://notonote.ai/contact.html#webpage",
+      "url": "https://notonote.ai/contact.html",
+      "name": "Contact NotoNote — Support, Privacy Requests and Community",
+      "description": "Contact NotoNote: email support for help with the app, your account or billing, send a privacy or data request, or join the community on Discord and Telegram.",
+      "isPartOf": {
+        "@id": "https://notonote.ai/#website"
+      },
+      "about": {
+        "@id": "https://notonote.ai/#organization"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-10-21"
     }
+  ]
+}
     </script>
 </head>
 <body>
@@ -58,17 +107,17 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-left">
-                    <a href="index.html" class="logo">
+                    <a href="/" class="logo">
                         <img src="logo.png" alt="NotoNote" class="logo-img">
                         <span class="logo-text">NotoNote</span>
                     </a>
                 </div>
 
                 <div class="nav-center">
-                    <a href="index.html#features">Features</a>
-                    <a href="school-mode.html">School Mode</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="/#features">Features</a>
+                    <a href="/school-mode.html">School Mode</a>
+                    <a href="/pricing.html">Pricing</a>
+                    <a href="/contact.html">Contact Us</a>
                     <a href="https://s3.us-east-2.amazonaws.com/23blocks.production.notonote.public/releases/NotoNote_1.2.1_aarch64.dmg" class="mobile-download-btn">Download Free</a>
                 </div>
 
@@ -93,7 +142,7 @@
     <main class="contact-page">
         <section class="legal-hero">
             <div class="container">
-                <a href="index.html" class="back-link">
+                <a href="/" class="back-link">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -115,7 +164,7 @@
 
                     <article class="contact-card">
                         <h2>Privacy and data requests</h2>
-                        <p>Access, correct or delete your personal data, or ask how we handle it. See our <a href="privacy.html">Privacy Policy</a>.</p>
+                        <p>Access, correct or delete your personal data, or ask how we handle it. See our <a href="/privacy.html">Privacy Policy</a>.</p>
                         <p><a class="contact-email" href="mailto:privacy@fluidmind.ai">privacy@fluidmind.ai</a></p>
                     </article>
 
@@ -139,7 +188,7 @@
                     </article>
                 </div>
 
-                <p class="contact-more">Looking for something else? See <a href="pricing.html">Pricing</a>, <a href="terms.html">Terms</a> or <a href="cookies.html">Cookies</a>.</p>
+                <p class="contact-more">Looking for something else? See <a href="/pricing.html">Pricing</a>, <a href="/terms.html">Terms</a> or <a href="/cookies.html">Cookies</a>.</p>
             </div>
         </section>
     </main>
@@ -156,15 +205,15 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Product</h4>
-                    <a href="index.html#features">Features</a>
-                    <a href="school-mode.html">School Mode</a>
-                    <a href="pricing.html">Pricing</a>
+                    <p class="footer-title">Product</p>
+                    <a href="/#features">Features</a>
+                    <a href="/school-mode.html">School Mode</a>
+                    <a href="/pricing.html">Pricing</a>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Community</h4>
-                    <a href="contact.html">Contact</a>
+                    <p class="footer-title">Community</p>
+                    <a href="/contact.html">Contact</a>
                     <a href="mailto:support@notonote.ai">support@notonote.ai</a>
                     <a href="https://t.me/notonote_official" target="_blank" rel="noopener">Telegram</a>
                     <a href="https://discord.com/invite/FXgN52acgG" target="_blank" rel="noopener">Discord</a>
@@ -174,9 +223,9 @@
             <div class="footer-bottom">
                 <p>&copy; <span id="copyright-year">2026</span> NotoNote. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="terms.html">Terms</a>
-                    <a href="privacy.html">Privacy</a>
-                    <a href="cookies.html">Cookies</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy.html">Privacy</a>
+                    <a href="/cookies.html">Cookies</a>
                 </div>
             </div>
         </div>
